@@ -43,7 +43,7 @@ export default function Dashboard() {
     };
 
     // Add a new document in collection "article" with ID 'title'
-    const res = await firebase.firestore().collection("articles").doc(title).set(data);
+    const res = await firebase.firestore().collection("articles").add(data);
     console.log("Set: ", res);
   }
 

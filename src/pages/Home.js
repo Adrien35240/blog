@@ -15,6 +15,7 @@ function Home() {
         let documents = [];
         article.forEach((doc) => {
           documents.push({ ...doc.data(), id: doc.id });
+          console.log(doc.id);
         });
         setArticles(documents);
       });
@@ -22,7 +23,7 @@ function Home() {
 
   function renderArticles() {
     return (
-      <Grid item xs={12} md={4}>
+      <Grid container xs={10} spacing={1}>
         {articles &&
           articles.map((article, index) => (
             <LittleCard
@@ -42,8 +43,8 @@ function Home() {
       container
       direction="row"
       justify="center"
-      alignItems="center"
-      spacing={2}
+      alignItems="flex-start"
+      spacing={0}
     >
       {renderArticles()}
     </Grid>
