@@ -14,43 +14,36 @@ const useStyles = makeStyles({
   },
 });
 
-const BigCardProps = {
-  title: "",
-  content: "",
-  img: "",
-  slug: "",
-};
+
 
 export default function BigCard(BigCardProps) {
   const classes = useStyles();
 
-    return (
-    
-        <Card className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              image={BigCardProps.img}
-              title="no-img"
-              height="140"
-              component="img"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {BigCardProps.title}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {BigCardProps.content}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Link to={'/blog/' + BigCardProps.slug}>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
-            </Link>
-          </CardActions>
-        </Card>
-     
-    );
+  return (
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          image={BigCardProps.img}
+          title="no-img"
+          height="140"
+          component="img"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {BigCardProps.title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {BigCardProps.content}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Link to={"/blog/" + BigCardProps.slug}>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </Link>
+      </CardActions>
+    </Card>
+  );
 }
