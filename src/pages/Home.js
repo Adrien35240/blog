@@ -2,9 +2,19 @@ import React, { useState, useEffect } from "react";
 import LittleCard from "../components/LittleCard";
 import Grid from "@material-ui/core/Grid";
 import firebase from "firebase";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height:100,
+  },
+}));
 function Home() {
-  const [articles, setArticles] = useState([]); // good
+  const [articles, setArticles] = useState([]);
+  const classes = useStyles();
 
   useEffect(() => {
     firebase
@@ -23,32 +33,24 @@ function Home() {
 
   function renderArticles() {
     return (
-      <Grid container xs={10} spacing={1}>
+      <Grid container spacing={3}>
         {articles &&
           articles.map((article, index) => (
-            <LittleCard
-              key={index}
-              title={article.title}
-              description={article.description}
-              img="/empty-card.jpeg"
-              slug="reptile"
-            />
+            <Grid item xs={12} sm={6}>
+              <LittleCard
+                key={index}
+                title={article.title}
+                description={article.description}
+                img="/empty-card.jpeg"
+                slug="reptile"
+              />{" "}
+            </Grid>
           ))}
       </Grid>
     );
   }
 
-  return (
-    <Grid
-      container
-      direction="row"
-      justify="center"
-      alignItems="flex-start"
-      spacing={0}
-    >
-      {renderArticles()}
-    </Grid>
-  );
+  return <div>{renderArticles()}</div>;
 }
 
 export default Home;
