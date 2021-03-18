@@ -10,7 +10,8 @@ import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
 import Home from "../pages/Home";
 import NavigationBar from "./NavigationBar";
-import Focus from '../pages/Focus'
+import Focus from "../pages/Focus";
+import Comments from "../pages/Comments";
 function App() {
   return (
     <Container>
@@ -20,7 +21,8 @@ function App() {
           <Switch>
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <PrivateRoute path="/dashboard" component={Dashboard} />
-            <Route path="/focus/:slug" component={Focus}/>             
+            <Route path="/focus/:slug" component={Focus} />
+            <Route path="/comments" component={Comments} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />

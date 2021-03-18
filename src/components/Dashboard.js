@@ -5,8 +5,9 @@ import { Grid, Typography, Button } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import firebase from "firebase";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 export default function Dashboard() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -33,6 +34,9 @@ export default function Dashboard() {
     } catch {
       setError("Failed to log out");
     }
+  }
+  function handleChange(e) {
+    setContent(e)
   }
 
   async function handleSubmit() {
@@ -73,18 +77,14 @@ export default function Dashboard() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />{" "}
-        <TextareaAutosize
-          placeholder="Contenu"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
+        <ReactQuill value={content} onChange={handleChange} />
         <Button
           color="primary"
           fullWidth={true}
           variant="contained"
           onClick={() => handleSubmit()}
         >
-          Se connecter
+          Enregister
         </Button>
       </form>
     </Grid>
