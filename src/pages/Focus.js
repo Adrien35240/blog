@@ -9,7 +9,7 @@ function Focus() {
     let urlcourante = document.location.href;
     urlcourante = urlcourante.replace(/\/$/, "");
     const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
-    console.log(queue_url);
+    // console.log(queue_url);
     firebase
       .firestore()
       .collection("articles")
@@ -38,7 +38,7 @@ function Focus() {
     >
       {articles &&
         articles.map((article, index) => (
-          <Grid key={index} item xs={12} md={4}>
+          <Grid key={index} item xs={10}>
             <BigCard
               title={article.title}
               content={article.content}

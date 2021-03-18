@@ -34,16 +34,16 @@ function Home() {
 
   function renderArticles() {
     return (
-      <Grid container spacing={3}>
+      <Grid container justify='center' spacing={2}>
         {articles &&
           articles.map((article, index) => (
-            <Grid key={index} item xs={12} sm={6}>
+            <Grid key={index} item xs={12} sm={3}>
               <LittleCard
                 title={article.title}
                 description={article.description}
                 img="/empty-card.jpeg"
                 slug={article.title}
-              />{" "}
+              />
             </Grid>
           ))}
       </Grid>

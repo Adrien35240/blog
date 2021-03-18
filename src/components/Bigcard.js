@@ -17,6 +17,17 @@ const useStyles = makeStyles({
 export default function BigCard(BigCardProps) {
   const classes = useStyles();
 
+
+  function formatContent() {
+    const text = (BigCardProps.content)
+    return (
+      <Typography component={'span'} dangerouslySetInnerHTML={{ __html: text}}>
+      </Typography>
+    );
+     
+}
+
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -26,7 +37,7 @@ export default function BigCard(BigCardProps) {
             {BigCardProps.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {BigCardProps.content}
+            {formatContent()}
           </Typography>
         </CardContent>
       </CardActionArea>
