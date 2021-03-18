@@ -27,7 +27,7 @@ export default function LittleCard(LittleCardProps) {
           <CardMedia
             image={LittleCardProps.img}
             title="no-img"
-            height="140"
+            height="70"
             component="img"
           />
           <CardContent>

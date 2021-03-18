@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    height:100,
+    height: 100,
   },
 }));
 function Home() {
@@ -25,9 +25,10 @@ function Home() {
         let documents = [];
         article.forEach((doc) => {
           documents.push({ ...doc.data(), id: doc.id });
-          console.log(doc.id);
+         
         });
         setArticles(documents);
+       
       });
   }, []);
 
@@ -36,13 +37,12 @@ function Home() {
       <Grid container spacing={3}>
         {articles &&
           articles.map((article, index) => (
-            <Grid item xs={12} sm={6}>
+            <Grid key={index} item xs={12} sm={6}>
               <LittleCard
-                key={index}
                 title={article.title}
                 description={article.description}
                 img="/empty-card.jpeg"
-                slug="reptile"
+                slug={article.title}
               />{" "}
             </Grid>
           ))}
