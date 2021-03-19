@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import BigCard from "../components/Bigcard";
+import BigCard from "../components/BigCard/Bigcard"
 import firebase from "firebase";
 function Focus() {
   const [articles, setArticles] = useState([]);
@@ -42,7 +42,7 @@ function Focus() {
             <BigCard
               title={article.title}
               content={article.content}
-              img="/empty-card.jpeg"
+              img={article.img}
               slug={article.title}
             />
           </Grid>

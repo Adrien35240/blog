@@ -24,4 +24,4 @@ yarn-error.log*
 
 /ressources
 
-firebase.js
+/services/database/firebase.js

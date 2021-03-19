@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import { Grid, Typography, Button, Input } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase";
-import { storage } from "../firebase";
+import { storage } from "../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 export default function Dashboard() {
@@ -16,7 +16,6 @@ export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
-  const allInputs = { imgUrl: "" };
   const [imageAsFile, setImageAsFile] = useState("");
 
   const useStyles = makeStyles((theme) => ({

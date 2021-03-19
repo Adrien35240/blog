@@ -1,23 +1,11 @@
 import React, { useState, useEffect } from "react";
-import LittleCard from "../components/LittleCard";
+import LittleCard from "../components/LittleCard/LittleCard";
 import Grid from "@material-ui/core/Grid";
 import firebase from "firebase";
 
-function Home() {
+function BlogPage() {
   const [articles, setArticles] = useState([]);
   const [urlImg, setUrlImg] = useState();
-
-  //  function getImage(nameImg) {
-  //    firebase
-  //     .storage()
-  //     .ref("images")
-  //     .child(nameImg)
-  //     .getDownloadURL()
-  //     .then((getUrl) => {
-  //       setUrlImg(getUrl);
-  //     });
-   
-  // }
 
   //NOTE: Recupere le lien d'une image sur firebase
 
@@ -59,4 +47,4 @@ function Home() {
   return <div>{renderArticles()}</div>;
 }
 
-export default Home;
+export default BlogPage;

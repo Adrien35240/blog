@@ -1,6 +1,6 @@
 import React, {  useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../services/security/contexts/AuthContext";
 import {  useHistory } from "react-router-dom";
 import { Grid, Typography, Button } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
