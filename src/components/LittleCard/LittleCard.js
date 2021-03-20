@@ -5,7 +5,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+import ButtonComments from "../ButtonComments/ButtonComments"
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 const useStyles = makeStyles({
@@ -17,35 +17,31 @@ const useStyles = makeStyles({
   },
 });
 
-export default function LittleCard(LittleCardProps) {
+export default function LittleCard(props) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link to={"/focus/" + LittleCardProps.slug}>
+        <Link to={"/focus/" + props.slug}>
           <CardMedia
-            image={LittleCardProps.img}
+            image={props.img}
             title="no-img"
             height="70"
             component="img"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {LittleCardProps.title}
+              {props.title}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {LittleCardProps.description}
+              {props.description}
             </Typography>
           </CardContent>
-        </Link>
+        </Link>{" "}
       </CardActionArea>
       <CardActions>
-        <Link to={"/comments"}>
-          <Button size="small" color="primary">
-            Commentaires
-          </Button>
-        </Link>
+        <ButtonComments slug={props.slug}/>
       </CardActions>
     </Card>
   );

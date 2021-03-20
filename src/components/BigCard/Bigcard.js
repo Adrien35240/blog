@@ -5,21 +5,20 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+import ButtonComments from "../ButtonComments/ButtonComments"
 const useStyles = makeStyles({
   root: {
     marginTop: "20px",
   },
 });
 
-export default function BigCard(BigCardProps) {
+export default function BigCard(props) {
   const classes = useStyles();
 
 
   function formatContent() {
-    const text = (BigCardProps.content)
+    const text = props.content;
     return (
       <Typography component={'span'} dangerouslySetInnerHTML={{ __html: text}}>
       </Typography>
@@ -31,10 +30,10 @@ export default function BigCard(BigCardProps) {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia image={BigCardProps.img} title="no-img" component="img" />
+        <CardMedia image={props.img} title="no-img" component="img" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {BigCardProps.title}
+            {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {formatContent()}
@@ -42,11 +41,7 @@ export default function BigCard(BigCardProps) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link to={"/comments"}>
-          <Button size="small" color="primary">
-            Commentaires
-          </Button>
-        </Link>
+        <ButtonComments slug={props.slug} />
       </CardActions>
     </Card>
   );
