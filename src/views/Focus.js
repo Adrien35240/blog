@@ -7,13 +7,12 @@ function Focus() {
 
   function getArticleFocused() {
     let urlcourante = document.location.href;
-    urlcourante = urlcourante.replace(/\/$/, "");
     const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
-    // console.log(queue_url);
+    console.log(queue_url);
     firebase
       .firestore()
       .collection("articles")
-      .where("title", "==", queue_url)
+      .where(firebase.firestore.FieldPath.documentId(), "==", queue_url) //NOTE: recupere l'id du document et le compare
       .get()
       .then((focus) => {
         let documents = [];
@@ -44,6 +43,7 @@ function Focus() {
               content={article.content}
               img={article.img}
               slug={article.title}
+              id={article.id}
             />
           </Grid>
         ))}

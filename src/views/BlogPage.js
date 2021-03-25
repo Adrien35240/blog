@@ -20,6 +20,7 @@ function BlogPage() {
           documents.push({ ...doc.data(), id: doc.id });
         });
         setArticles(documents);
+        
       });
   }, []);
 
@@ -28,7 +29,7 @@ function BlogPage() {
       <Grid container justify="center" spacing={2}>
         {articles &&
           articles.map((article, index) => {
-           {/* getImage(article.img) */}
+          
             return (
               <Grid key={index} item xs={12} sm={3}>
                 <LittleCard
@@ -36,6 +37,7 @@ function BlogPage() {
                   description={article.description}
                   img={article.img}
                   slug={article.title}
+                  id={article.id}
                 />
               </Grid>
             );

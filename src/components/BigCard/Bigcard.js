@@ -41,7 +41,7 @@ export default function BigCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <ButtonComments slug={props.slug} />
+        <ButtonComments slug={props.id} />
       </CardActions>
     </Card>
   );

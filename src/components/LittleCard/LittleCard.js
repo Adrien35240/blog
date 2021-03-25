@@ -23,7 +23,7 @@ export default function LittleCard(props) {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link to={"/focus/" + props.slug}>
+        <Link to={"/focus/" + props.id}>
           <CardMedia
             image={props.img}
             title="no-img"
@@ -41,7 +41,7 @@ export default function LittleCard(props) {
         </Link>{" "}
       </CardActionArea>
       <CardActions>
-        <ButtonComments slug={props.slug}/>
+        <ButtonComments slug={props.id}/>
       </CardActions>
     </Card>
   );
