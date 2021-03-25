@@ -8,11 +8,11 @@ function Comments() {
   const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
 
   useEffect(() => {
-    // console.log(queue_url);
+    console.log("Comment queue_url => :", queue_url);
     firebase
       .firestore()
-      .collection("articles")
-      .where(firebase.firestore.FieldPath.documentId(), "==", queue_url) //NOTE: recupere l'id du document et le compare
+      .collection("comments")
+      .where("idPost", "==", queue_url) //NOTE: recupere l'id du document et le compare
       .get()
       .then((focus) => {
         let documents = [];
@@ -20,14 +20,20 @@ function Comments() {
           documents.push({ ...doc.data(), id: doc.id });
         });
         setArticles(documents);
-        console.log("articles: ", articles);
       });
   }, []);
-     
-     return (
-          <>
-               Commentaires : {articles.title}
-          </>
-     )
+
+  return (
+    <>
+      {articles &&
+        articles.map((article, index) => {
+          return (
+            <Grid key={index}>
+              Commentaires : {article.comment} ecrit par {article.userPseudo}
+            </Grid>
+          );
+        })}
+    </>
+  );
 }
 export default Comments;

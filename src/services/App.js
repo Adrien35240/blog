@@ -4,6 +4,7 @@ import { Container } from "@material-ui/core";
 import { AuthProvider } from "./security/contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "../views/Dashboard";
+import CreatePost from "../views/CreatePost";
 import Login from "../views/Login";
 import PrivateRoute from "../services/security/contexts/PrivateRoute";
 import ForgotPassword from "../views/ForgotPassword";
@@ -19,6 +20,7 @@ function App() {
         <NavigationBar />
         <AuthProvider>
           <Switch>
+            <PrivateRoute path="/create-post" component={CreatePost} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <Route path="/focus/:slug" component={Focus} />

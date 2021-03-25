@@ -48,7 +48,7 @@ export default function Signup() {
         {error && <Alert severity="error">{error}</Alert>}
 
         <Typography variant="h4" gutterBottom style={{ margintTop: "30px" }}>
-          Login
+         Register
         </Typography>
         <form noValidate autoComplete="off">
           <TextField
