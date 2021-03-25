@@ -5,7 +5,7 @@ function ButtonComments(props) {
   return (
     <>
       <Button size="small" color="primary">
-      <Link to={"/comments/" + props.slug}> Commentaires</Link>
+      <Link to={"/comments/" + props.slug} > Commentaires</Link>
       </Button>
     </>
   );

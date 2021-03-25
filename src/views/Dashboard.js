@@ -79,7 +79,7 @@ export default function Dashboard() {
     <Grid container justify="center">
       {error && <Alert severity="error">{error}</Alert>}
       <Typography variant="h4" gutterBottom style={{ margintTop: "30px" }}>
-        Dashboard
+        Dashboard de {currentUser.email}
       </Typography>
 
       <form noValidate autoComplete="off">
@@ -110,6 +110,14 @@ export default function Dashboard() {
           onClick={() => handleSubmit()}
         >
           Enregister
+        </Button>{" "}
+        <Button
+          color="primary"
+          fullWidth={true}
+          variant="contained"
+          onClick={() => handleLogout()}
+        >
+          Deconnexion
         </Button>
       </form>
     </Grid>

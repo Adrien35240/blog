@@ -1,13 +1,14 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import firebase from "firebase";
 
-function Comments(props) {
+function Comments() {
   const [articles, setArticles] = useState([]);
-  function getArticleFocused() {
-    let urlcourante = document.location.href;
-    urlcourante = urlcourante.replace(/\/$/, "");
-    const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
+  let urlcourante = document.location.href;
+  urlcourante = urlcourante.replace(/\/$/, "");
+  const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
+
+  useEffect(() => {
     // console.log(queue_url);
     firebase
       .firestore()
@@ -19,23 +20,15 @@ function Comments(props) {
         focus.forEach((doc) => {
           documents.push({ ...doc.data(), id: doc.id });
         });
-        setArticles(documents);
+           setArticles(documents);
+           console.log("articles: " ,articles)
       });
-  }
-
-useEffect(() => {
- getArticleFocused();
-}, [])
-
-  return (
-    <Grid>
-      { articles.map((article, index) => (
-        <Grid key={index}>
-            Commentaires de {article.title}
-       </Grid>
-     ))}
-    </Grid>
-  );
+  }, []);
+     
+     return (
+          <>
+               Commentaires : {queue_url}
+          </>
+     )
 }
-
 export default Comments;
