@@ -1,22 +1,18 @@
-//TODO: SECURITY
 import React, { useState } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import { Grid, Typography, Button, Input } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase";
 import { storage } from "../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { Link } from "react-router-dom";
 export default function Dashboard() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
-  const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { currentUser } = useAuth();
   const history = useHistory();
   const [imageAsFile, setImageAsFile] = useState("");
 
@@ -28,16 +24,6 @@ export default function Dashboard() {
   }));
   const classes = useStyles();
 
-  async function handleLogout() {
-    setError("");
-
-    try {
-      await logout();
-      history.push("/login");
-    } catch {
-      setError("Failed to log out");
-    }
-  }
   function handleChange(e) {
     setContent(e);
     console.log(e);
@@ -71,13 +57,18 @@ export default function Dashboard() {
     };
 
     // Add a new document in collection "article" with ID 'title'
-    const res = await firebase.firestore().collection("articles").add(data);
-    console.log("Set: ", res);
+    const res = await firebase
+      .firestore()
+      .collection("articles")
+      .add(data)
+      
+        console.log("Set: ", res);
+        history.push("/dashboard");
+    
   }
 
   return (
     <Grid container justify="center">
-      {error && <Alert severity="error">{error}</Alert>}
       <Typography variant="h4" gutterBottom style={{ margintTop: "30px" }}>
         Créer un post
       </Typography>
@@ -100,7 +91,7 @@ export default function Dashboard() {
           className={classes.input}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        />{" "}
+        />
         <Input type="file" onChange={handleImageAsFile} />
         <ReactQuill value={content} onChange={handleChange} />
         <Button
@@ -109,19 +100,10 @@ export default function Dashboard() {
           variant="contained"
           onClick={() => handleSubmit()}
         >
-          Enregister
-        </Button>{" "}
-        <Button color="primary" fullWidth={true} variant="contained">
-          <Link to="/dashboard"> Dashboard</Link>
+         Enregistrer
         </Button>
-        <Button
-          color="primary"
-          fullWidth={true}
-          variant="contained"
-          onClick={() => handleLogout()}
-        >
-          Deconnexion
-        </Button>
+      
+    
       </form>
     </Grid>
   );

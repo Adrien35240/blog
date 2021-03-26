@@ -3,10 +3,21 @@ import React, { useState, useEffect } from "react";
 import LittleCardDashboard from "../LittleCardDashboard/LittleCardDashboard";
 import Grid from "@material-ui/core/Grid";
 import firebase from "firebase";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  root: {
+    marginTop: "20px",
+    "& a": {
+      textDecoration: "none",
+    },
+  },
+});
 
 function DashboardLittleCard(props) {
   const [articles, setArticles] = useState([]);
   const [urlImg, setUrlImg] = useState();
+  const classes = useStyles();
 
   //NOTE: Recupere le lien d'une image sur firebase
 

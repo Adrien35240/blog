@@ -13,16 +13,18 @@ import BlogPage from "../views/BlogPage";
 import NavigationBar from "../components/NavigationBar/NavigationBar";
 import Focus from "../views/Focus";
 import Comments from "../views/Comments";
+import ModifyPost from "../views/ModifyPost";
 function App() {
   return (
     <Container>
       <Router>
-        <NavigationBar />
         <AuthProvider>
+          <NavigationBar />
           <Switch>
             <PrivateRoute path="/create-post" component={CreatePost} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/modify-post/:slug" component={ModifyPost} />
             <Route path="/focus/:slug" component={Focus} />
             <Route path="/comments/:slug" component={Comments} />
             <Route path="/signup" component={Signup} />
