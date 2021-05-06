@@ -1,18 +1,13 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import "./button-icon.css";
+
 function ButtonNavigationBar(props) {
-
-
-
-
-
-  
   return (
     <>
-      <Button>
+      <button>
         <Link to={props.path}>{props.name}</Link>
-      </Button>
+      </button>
     </>
   );
 }

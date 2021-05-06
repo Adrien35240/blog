@@ -10,7 +10,7 @@ import PrivateRoute from "../services/security/contexts/PrivateRoute";
 import ForgotPassword from "../views/ForgotPassword";
 import UpdateProfile from "../views/UpdateProfile";
 import BlogPage from "../views/BlogPage";
-import NavigationBar from "../components/NavigationBar/NavigationBar";
+import Navbar from "../components/NavigationBar/Navbar";
 import Focus from "../views/Focus";
 import Comments from "../views/Comments";
 import ModifyPost from "../views/ModifyPost";
@@ -19,7 +19,7 @@ function App() {
     <Container>
       <Router>
         <AuthProvider>
-          <NavigationBar />
+          <Navbar />
           <Switch>
             <PrivateRoute path="/create-post" component={CreatePost} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
