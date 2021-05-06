@@ -25,7 +25,7 @@ function ButtonLogOutNavigationBar(props) {
     <div>
       {" "}
       {error && <Alert severity="error">{error}</Alert>}
-      <button onClick={handleLogout}>{props.name}</button>
+      <button className="icon-navbar" onClick={handleLogout}>{props.name}</button>
     </div>
   );
 }

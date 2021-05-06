@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Grid from "@material-ui/core/Grid";
 import BigCard from "../components/BigCard/Bigcard"
 import firebase from "firebase";
 function Focus() {
@@ -28,16 +27,10 @@ function Focus() {
   }, []);
 
   return (
-    <Grid
-      container
-      direction="row"
-      justify="center"
-      alignItems="center"
-      spacing={2}
-    >
+    <div>
       {articles &&
         articles.map((article, index) => (
-          <Grid key={index} item xs={10}>
+          <div>
             <BigCard
               title={article.title}
               content={article.content}
@@ -45,9 +38,9 @@ function Focus() {
               slug={article.title}
               id={article.id}
             />
-          </Grid>
+          </div>
         ))}
-    </Grid>
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Signup from "../views/Signup";
+//NOTE:remove container 
 import { Container } from "@material-ui/core";
 import { AuthProvider } from "./security/contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

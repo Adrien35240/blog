@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import LittleCard from "../components/LittleCard/LittleCard";
-import Grid from "@material-ui/core/Grid";
 import firebase from "firebase";
 
 function BlogPage() {
@@ -26,12 +25,12 @@ function BlogPage() {
 
   function renderArticles() {
     return (
-      <Grid container justify="center" spacing={2}>
+      <div container justify="center" spacing={2}>
         {articles &&
           articles.map((article, index) => {
           
             return (
-              <Grid key={index} item xs={12} sm={3}>
+              <div >
                 <LittleCard
                   title={article.title}
                   description={article.description}
@@ -39,10 +38,10 @@ function BlogPage() {
                   slug={article.title}
                   id={article.id}
                 />
-              </Grid>
+              </div>
             );
           })}
-      </Grid>
+      </div>
     );
   }
 

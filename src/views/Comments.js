@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Grid from "@material-ui/core/Grid";
 import firebase from "firebase";
 
 function Comments() {
@@ -24,16 +23,16 @@ function Comments() {
   }, []);
 
   return (
-    <>
+    <div>
       {articles &&
         articles.map((article, index) => {
           return (
-            <Grid key={index}>
+            <div key={index}>
               Commentaires : {article.comment} ecrit par {article.userPseudo}
-            </Grid>
+            </div>
           );
         })}
-    </>
+    </div>
   );
 }
 export default Comments;

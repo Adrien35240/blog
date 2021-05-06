@@ -1,7 +1,8 @@
-button {
-  border: 1px solid red;
+.icon-navbar {
+  border: none;
   border-radius: 6px;
   padding: 10px;
-  background-color: green;
-  color: aqua;
+  background-color: grey;
+  color: white;
+  text-decoration: none;
 }

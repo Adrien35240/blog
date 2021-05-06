@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
-import { Grid, Typography, Button, Input } from "@material-ui/core";
-import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase";
 import { storage } from "../services/database/firebase";
@@ -57,24 +55,19 @@ export default function Dashboard() {
     };
 
     // Add a new document in collection "article" with ID 'title'
-    const res = await firebase
-      .firestore()
-      .collection("articles")
-      .add(data)
-      
-        console.log("Set: ", res);
-        history.push("/dashboard");
-    
+    const res = await firebase.firestore().collection("articles").add(data);
+
+    console.log("Set: ", res);
+    history.push("/dashboard");
   }
 
   return (
-    <Grid container justify="center">
-      <Typography variant="h4" gutterBottom style={{ margintTop: "30px" }}>
-        Créer un post
-      </Typography>
+    <div>
+      <div>Créer un post</div>
 
       <form noValidate autoComplete="off">
-        <TextField
+        <input
+          type="text"
           required
           id="title"
           label="Titre"
@@ -83,7 +76,8 @@ export default function Dashboard() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <TextField
+        <input
+          type="text"
           required
           id="password"
           label="Description"
@@ -92,19 +86,17 @@ export default function Dashboard() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <Input type="file" onChange={handleImageAsFile} />
+        <input type="file" onChange={handleImageAsFile} />
         <ReactQuill value={content} onChange={handleChange} />
-        <Button
+        <button
           color="primary"
           fullWidth={true}
           variant="contained"
           onClick={() => handleSubmit()}
         >
-         Enregistrer
-        </Button>
-      
-    
+          Enregistrer
+        </button>
       </form>
-    </Grid>
+    </div>
   );
 }
