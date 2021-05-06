@@ -1,1 +1,1 @@
-### Réalisation d'un blog en react/firebase
+### Réalisation d'un blog avec reactJs et bdd firebase/firestore
