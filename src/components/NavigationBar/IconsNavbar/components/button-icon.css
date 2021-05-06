@@ -1,8 +1,16 @@
-.icon-navbar {
+.container-icon-navbar{
+  display: flex;
+}
+.icon-navbar{
   border: none;
-  border-radius: 6px;
+  border-radius:20px;
+  margin: 4px;
   padding: 10px;
-  background-color: grey;
-  color: white;
-  text-decoration: none;
+  background-color: #227093;
+  color:#d1ccc0;
+  width:100px;
+}
+.icon-navbar:hover{
+  background-color: #34ace07e
+
 }

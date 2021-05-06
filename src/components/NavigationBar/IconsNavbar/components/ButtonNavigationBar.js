@@ -4,10 +4,10 @@ import "./button-icon.css";
 
 function ButtonNavigationBar(props) {
   return (
-    <div>
-      <button className="icon-navbar">
-        <Link to={props.path}>{props.name}</Link>
-      </button>
+    <div className="container-icon-navbar">
+      <Link id="link" to={props.path}>
+        <button className="icon-navbar">{props.name}</button>
+      </Link>
     </div>
   );
 }
