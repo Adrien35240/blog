@@ -1,0 +1,20 @@
+.container-big-card {
+    margin-top:2em;
+}
+#button-comment{
+    text-decoration: none;
+    color: black;
+}
+.big-card-title{
+    margin-top:1em;
+    font-size:2em;
+    color:#34ace0;
+    font-weight: bold;
+
+}
+.container-img{
+    border-radius:10px;
+}
+.big-card-content{
+
+}

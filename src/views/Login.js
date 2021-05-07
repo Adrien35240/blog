@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
-
+import "../css/login.css";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,41 +25,40 @@ export default function Login() {
   }
 
   return (
-    <div >
-      <div>
-        {error && <div severity="error">{error}</div>}
+    <div className="container-login">
+      {error && <div severity="error">{error}</div>}
 
-        <div>Login</div>
-        <form noValidate autoComplete="off">
-          <input
-            type="text"
-            required
-            id="email"
-            label="Email"
-            variant="outlined"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            required
-            id="password"
-            label="Password"
-            variant="outlined"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+      <div className="title-login">Identifiants:</div>
 
-          <button
-            disabled={loading}
-            color="primary"
-            variant="contained"
-            onClick={() => handleSubmit()}
-          >
-            Se connecter
-          </button>
-        </form>
-      </div>
+      <input
+        placeholder="Login"
+        type="text"
+        required
+        id="email"
+        label="Email"
+        variant="outlined"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        placeholder="Mot de passe"
+        type="password"
+        required
+        id="password"
+        label="Password"
+        variant="outlined"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <button
+        disabled={loading}
+        color="primary"
+        variant="contained"
+        onClick={() => handleSubmit()}
+      >
+        Se connecter
+      </button>
     </div>
   );
 }

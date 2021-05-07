@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import BigCard from "../components/BigCard/Bigcard"
+import BigCard from "../components/BigCard/Bigcard";
 import firebase from "firebase";
+import "../css/focus.css";
 function Focus() {
   const [articles, setArticles] = useState([]);
 
@@ -27,7 +28,7 @@ function Focus() {
   }, []);
 
   return (
-    <div>
+    <div className="container-focus-article">
       {articles &&
         articles.map((article, index) => (
           <div>

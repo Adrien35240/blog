@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../../../services/security/contexts/AuthContext";
 import { useHistory, Link } from "react-router-dom";
+import {AiOutlineLogout} from "react-icons/ai"
 import "./button-icon.css";
 function ButtonLogOutNavigationBar(props) {
   const [error, setError] = useState("");
@@ -21,10 +22,12 @@ function ButtonLogOutNavigationBar(props) {
   }
 
   return (
-    <div>
+    <div className="container-icon-navbar">
       {" "}
       {error && <div severity="error">{error}</div>}
-      <button className="icon-navbar" onClick={handleLogout}>{props.name}</button>
+      <div id="id-icon-home" onClick={handleLogout}>
+        <AiOutlineLogout />
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonComments from "../ButtonComments/ButtonComments";
-
+import {Link} from "react-router-dom"
+import "./bigcard.css"
 export default function BigCard(props) {
   function formatContent() {
     const text = props.content;
@@ -13,17 +13,13 @@ export default function BigCard(props) {
       <div>
         <img className="container-img" src={props.img} alt="no-img" />
         <div>
-          <div >
-            {props.title}
-          </div>
-          <div >
-            {formatContent()}
-          </div>
+          <div className="big-card-title">{props.title}</div>
+          <div className="big-card-content">{formatContent()}</div>
         </div>
       </div>
-      <div>
-        <ButtonComments slug={props.id} />
-      </div>
+      <Link id="button-comment" to={"/comments/" + props.id}>
+        Commentaires
+      </Link>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 .container-icon-link {
   display: flex;
-  margin-left:auto;
+  margin-left: auto;
 }
 
 #id-icon-link {
@@ -13,9 +13,10 @@
   width: 5em;
   font-size: 17px;
   letter-spacing: 0.06em;
+  transition: background-color 0.3s;
 }
 #id-icon-link:hover {
-  background-color: #218c74;
+  background-color: #cfcfcf48;
 }
 #id-icon-home {
   display: flex;
@@ -24,7 +25,8 @@
   background-color: #34ace0;
   color: #f7f1e3;
   width: 4em;
+  transition: background-color 0.3s;
 }
 #id-icon-home:hover {
-  background-color: #218c74;
+  background-color: #cfcfcf48;
 }

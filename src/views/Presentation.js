@@ -7,12 +7,12 @@ function Presentation() {
       <div className="paragraphe-presentation">
         <div>
           Ceci est le blog d'un développeur junior en reconversion, j'ai décidé
-          de développer ce blog de zéro en ReactJs/CSS/Firebase en utilisant un
-          minimun de libraries.
+          de developper ce blog de zéro en ReactJs/CSS/Firebase en utilisant un
+          minimun de librairies.
         </div>
         <div>
           il me servira de support pour exposer mon savoir faire ainsi que
-          quelques réflexions où notes sur des notions apprisent à travers ce
+          quelques réflexions ou notes sur des notions apprisent à travers ce
           projet.
         </div>
       </div>

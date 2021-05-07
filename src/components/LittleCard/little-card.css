@@ -1,12 +1,31 @@
 .container-little-card {
+  background-color: #cfcfcf48;
   margin: 20px;
   border: 1px solid #d1ccc0;
   border-radius: 6px;
   width: 200px;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
+  padding: 4px;
 }
 .container-img-little-card {
-  border: none;
+  border:none;
   border-radius: 6px;
-  width:200px;
+  width: 200px;
+}
+.title-little-card {
+  color: #227093;
+  text-align: center;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.description-little-card {
+  text-align: left;
+  color: black;
+  margin: 4px;
+
+}
+#link-little-card {
+  text-decoration: none;
 }
