@@ -26,11 +26,11 @@ function DashboardLittleCard(props) {
 
   function renderArticles() {
     return (
-      <div container justify="center" spacing={2}>
+      <div>
         {articles &&
           articles.map((article, index) => {
             return (
-              <div>
+              <div key={index}>
                 <LittleCardDashboard
                   title={article.title}
                   description={article.description}

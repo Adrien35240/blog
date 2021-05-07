@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LittleCard from "../components/LittleCard/LittleCard";
 import firebase from "firebase";
-
+import "../css/blogpage.css"
 function BlogPage() {
   const [articles, setArticles] = useState([]);
   const [urlImg, setUrlImg] = useState();
@@ -25,12 +25,12 @@ function BlogPage() {
 
   function renderArticles() {
     return (
-      <div container justify="center" spacing={2}>
+      <div className="container-blogpage">
         {articles &&
           articles.map((article, index) => {
           
             return (
-              <div >
+              <div key={index}>
                 <LittleCard
                   title={article.title}
                   description={article.description}

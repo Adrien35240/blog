@@ -13,7 +13,6 @@ export default function Dashboard() {
   const history = useHistory();
   const [imageAsFile, setImageAsFile] = useState("");
 
-
   function handleChange(e) {
     setContent(e);
     console.log(e);
@@ -57,36 +56,23 @@ export default function Dashboard() {
     <div>
       <div>Créer un post</div>
 
-      <form noValidate autoComplete="off">
-        <input
-          type="text"
-          required
-          id="title"
-          label="Titre"
-          variant="outlined"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          required
-          id="password"
-          label="Description"
-          variant="outlined"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input type="file" onChange={handleImageAsFile} />
-        <ReactQuill value={content} onChange={handleChange} />
-        <button
-          color="primary"
-          fullWidth={true}
-          variant="contained"
-          onClick={() => handleSubmit()}
-        >
-          Enregistrer
-        </button>
-      </form>
+      <input
+        id="title"
+        label="Titre"
+        variant="outlined"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <input
+        id="password"
+        label="Description"
+        variant="outlined"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <input type="file" onChange={handleImageAsFile} />
+      <ReactQuill value={content} onChange={handleChange} />
+      <button onClick={() => handleSubmit()}>Créer</button>
     </div>
   );
 }

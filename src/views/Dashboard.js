@@ -26,7 +26,7 @@ export default function Dashboard() {
         {error && <Alert severity="error">{error}</Alert>}
         <div>Dashboard de : {currentUser.email}</div>
         <DashboardLittleCard userId={currentUser.uid} />
-        <button color="primary" fullWidth={true} variant="contained">
+        <button >
           <Link to="/create-post"> Créer un nouveau post</Link>
         </button>
       </form>

@@ -26,7 +26,7 @@ export default function Login() {
   }
 
   return (
-    <div container justify="center">
+    <div >
       <div>
         {error && <Alert severity="error">{error}</Alert>}
 
@@ -55,7 +55,6 @@ export default function Login() {
           <button
             disabled={loading}
             color="primary"
-            fullWidth={true}
             variant="contained"
             onClick={() => handleSubmit()}
           >
