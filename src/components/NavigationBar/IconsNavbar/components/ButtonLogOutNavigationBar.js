@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../../../services/security/contexts/AuthContext";
 import { useHistory, Link } from "react-router-dom";
-import Alert from "@material-ui/lab/Alert";
 import "./button-icon.css";
 function ButtonLogOutNavigationBar(props) {
   const [error, setError] = useState("");
@@ -24,7 +23,7 @@ function ButtonLogOutNavigationBar(props) {
   return (
     <div>
       {" "}
-      {error && <Alert severity="error">{error}</Alert>}
+      {error && <div severity="error">{error}</div>}
       <button className="icon-navbar" onClick={handleLogout}>{props.name}</button>
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
-import Alert from "@material-ui/lab/Alert";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -33,7 +32,7 @@ export default function Signup() {
   return (
     <div container justify="center">
       <div item xs={12} md={6}>
-        {error && <Alert severity="error">{error}</Alert>}
+        {error && <div severity="error">{error}</div>}
 
         <div>Register</div>
         <form noValidate autoComplete="off">

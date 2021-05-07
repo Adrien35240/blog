@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
-import { useHistory, Link } from "react-router-dom";
-import Alert from "@material-ui/lab/Alert";
+import { Link } from "react-router-dom";
 import DashboardLittleCard from "../components/DashboardLittleCard/DashboardLittleCard";
 
 export default function Dashboard() {
@@ -11,7 +10,7 @@ export default function Dashboard() {
   return (
     <div>
       <form>
-        {error && <Alert severity="error">{error}</Alert>}
+        {error && <div severity="error">{error}</div>}
         <div>Dashboard de : {currentUser.email}</div>
         <DashboardLittleCard userId={currentUser.uid} />
         <button >
