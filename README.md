@@ -1,1 +1,1 @@
-### Réalisation d'un blog avec reactJs/material-ui et bdd firebase/firestore
+### Réalisation d'un blog avec reactJs/CSS et bdd firebase/firestore
