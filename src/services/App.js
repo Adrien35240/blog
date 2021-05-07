@@ -1,7 +1,6 @@
 import React from "react";
 import Signup from "../views/Signup";
 //NOTE:remove container 
-import { Container } from "@material-ui/core";
 import { AuthProvider } from "./security/contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "../views/Dashboard";
@@ -17,7 +16,6 @@ import Comments from "../views/Comments";
 import ModifyPost from "../views/ModifyPost";
 function App() {
   return (
-    <Container>
       <Router>
         <AuthProvider>
           <Navbar />
@@ -35,7 +33,6 @@ function App() {
           </Switch>
         </AuthProvider>
       </Router>
-    </Container>
   );
 }
 

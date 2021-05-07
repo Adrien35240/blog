@@ -1,3 +1,6 @@
-.container-navbar{
-    background-color:#227093;
+.container-navbar {
+  background-color: #34ace0;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
+  width: 100%;
+  height: 3em;
 }

@@ -1,16 +1,30 @@
-.container-icon-navbar{
+.container-icon-link {
   display: flex;
+  margin-left:auto;
 }
-.icon-navbar{
-  border: none;
-  border-radius:20px;
-  margin: 4px;
-  padding: 10px;
-  background-color: #227093;
-  color:#d1ccc0;
-  width:100px;
-}
-.icon-navbar:hover{
-  background-color: #34ace07e
 
+#id-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #34ace0;
+  color: #f7f1e3;
+  width: 5em;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+}
+#id-icon-link:hover {
+  background-color: #218c74;
+}
+#id-icon-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #34ace0;
+  color: #f7f1e3;
+  width: 4em;
+}
+#id-icon-home:hover {
+  background-color: #218c74;
 }

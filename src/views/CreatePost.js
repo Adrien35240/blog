@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase";
 import { storage } from "../services/database/firebase";
 import ReactQuill from "react-quill";
@@ -14,13 +13,6 @@ export default function Dashboard() {
   const history = useHistory();
   const [imageAsFile, setImageAsFile] = useState("");
 
-  const useStyles = makeStyles((theme) => ({
-    input: {
-      width: "100%",
-      margin: "10px 0px 10px 0px",
-    },
-  }));
-  const classes = useStyles();
 
   function handleChange(e) {
     setContent(e);
@@ -72,7 +64,6 @@ export default function Dashboard() {
           id="title"
           label="Titre"
           variant="outlined"
-          className={classes.input}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -82,7 +73,6 @@ export default function Dashboard() {
           id="password"
           label="Description"
           variant="outlined"
-          className={classes.input}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />

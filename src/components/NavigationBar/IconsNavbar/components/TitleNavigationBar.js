@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { CgHomeAlt } from "react-icons/cg";
+import "./button-icon.css";
 function TitleNavigationBar(props) {
   return (
-    <div>
-      <Link to={props.path}>{props.name}</Link>
+    <div className="container-icon-navbar">
+      <Link id="id-icon-home" to={props.path}>
+        <CgHomeAlt  />
+      </Link>
     </div>
   );
 }

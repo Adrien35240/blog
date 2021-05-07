@@ -4,41 +4,46 @@ import TitleNavigationBar from "./components/TitleNavigationBar";
 import ButtonNavigationBar from "./components/ButtonNavigationBar";
 import { useAuth } from "../../../services/security/contexts/AuthContext";
 import ButtonLogOutNavigationBar from "./components/ButtonLogOutNavigationBar";
-
+import "./icon-navbar.css"
 function IconsNavbar() {
   const { currentUser, logout } = useAuth();
 
   return (
     <div className="container-icon-navbar">
-      <TitleNavigationBar
-        name="Le Blog"
-        path="/"
-        className="container-title-navbar"
-      />
-      {currentUser ? (
-        <ButtonNavigationBar
-          color="inherit"
-          name="Dashboard"
-          path="/dashboard"
+      <div>
+        <TitleNavigationBar
+          name="Le Blog"
+          path="/"
+          className="container-title-navbar"
         />
-      ) : (
-        <></> // n'afficher rien si condition = false
-      )}
-      {currentUser ? (
-        <ButtonLogOutNavigationBar name="LogOut" color="inherit" />
-      ) : (
-        <></> // n'afficher rien si condition = false
-      )}
-      {!currentUser ? (
-        <ButtonNavigationBar color="inherit" name="LogIn" path="/login" />
-      ) : (
-        <></> // n'afficher rien si condition = false
-      )}{" "}
-      {!currentUser ? (
-        <ButtonNavigationBar color="inherit" name="SignUp" path="/signup" />
-      ) : (
-        <></> // n'afficher rien si condition = false
-      )}
+      </div>
+      <div className="container-icon-link">
+        
+        {currentUser ? (
+          <ButtonNavigationBar
+            color="inherit"
+            name="Dashboard"
+            path="/dashboard"
+          />
+        ) : (
+          <></> // n'afficher rien si condition = false
+        )}
+        {currentUser ? (
+          <ButtonLogOutNavigationBar name="LogOut" color="inherit" />
+        ) : (
+          <></> // n'afficher rien si condition = false
+        )}
+        {!currentUser ? (
+          <ButtonNavigationBar color="inherit" name="LogIn" path="/login" />
+        ) : (
+          <></> // n'afficher rien si condition = false
+        )}{" "}
+        {!currentUser ? (
+          <ButtonNavigationBar color="inherit" name="SignUp" path="/signup" />
+        ) : (
+          <></> // n'afficher rien si condition = false
+        )}
+      </div>
     </div>
   );
 }

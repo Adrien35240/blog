@@ -4,9 +4,9 @@ import "./button-icon.css";
 
 function ButtonNavigationBar(props) {
   return (
-    <div className="container-icon-navbar">
-      <Link id="link" to={props.path}>
-        <button className="icon-navbar">{props.name}</button>
+    <div className="container-icon-link">
+      <Link id="id-icon-link" to={props.path}>
+        {props.name}
       </Link>
     </div>
   );

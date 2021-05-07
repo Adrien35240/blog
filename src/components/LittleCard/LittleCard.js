@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonComments from "../ButtonComments/ButtonComments"
 import { Link } from "react-router-dom";
-
+import "./little-card.css"
 export default function LittleCard(props) {
 
   return (
