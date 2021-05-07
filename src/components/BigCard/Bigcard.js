@@ -13,10 +13,10 @@ export default function BigCard(props) {
       <div>
         <img className="container-img" src={props.img} alt="no-img" />
         <div>
-          <div gutterBottom variant="h5" component="h2">
+          <div >
             {props.title}
           </div>
-          <div variant="body2" color="textSecondary" component="p">
+          <div >
             {formatContent()}
           </div>
         </div>

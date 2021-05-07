@@ -6,19 +6,7 @@ import DashboardLittleCard from "../components/DashboardLittleCard/DashboardLitt
 
 export default function Dashboard() {
   const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
-  const history = useHistory();
-
-  async function handleLogout() {
-    setError("");
-
-    try {
-      await logout();
-      history.push("/");
-    } catch {
-      setError("Failed to log out");
-    }
-  }
+  const { currentUser } = useAuth();
 
   return (
     <div>

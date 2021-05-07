@@ -44,7 +44,6 @@ export default function Login() {
           <input
             type="password"
             required
-            type="password"
             id="password"
             label="Password"
             variant="outlined"

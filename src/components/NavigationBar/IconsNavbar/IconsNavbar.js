@@ -39,9 +39,9 @@ function IconsNavbar() {
           <></> // n'afficher rien si condition = false
         )}{" "}
         {!currentUser ? (
-          <ButtonNavigationBar color="inherit" name="SignUp" path="/signup" />
+          <ButtonNavigationBar color="inherit" name="SignUp" path="/connection-disable" />
         ) : (
-          <></> // n'afficher rien si condition = false
+          <></> // n'afficher rien si condition = false / modifier le path a /signup pour activer la page d'enregistrement d'utilisateur
         )}
       </div>
     </div>

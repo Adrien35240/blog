@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LittleCard from "../components/LittleCard/LittleCard";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/app"
 import "../css/blogpage.css"
 function BlogPage() {
   const [articles, setArticles] = useState([]);
-  const [urlImg, setUrlImg] = useState();
 
   //NOTE: Recupere le lien d'une image sur firebase
 

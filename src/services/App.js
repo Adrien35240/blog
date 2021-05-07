@@ -1,6 +1,6 @@
 import React from "react";
 import Signup from "../views/Signup";
-//NOTE:remove container 
+//NOTE:remove container
 import { AuthProvider } from "./security/contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "../views/Dashboard";
@@ -13,28 +13,31 @@ import BlogPage from "../views/BlogPage";
 import Navbar from "../components/NavigationBar/Navbar";
 import Focus from "../views/Focus";
 import Comments from "../views/Comments";
-import ModifyPost from "../views/ModifyPost"
-import Presentation from "../views/Presentation"
+import ModifyPost from "../views/ModifyPost";
+import Presentation from "../views/Presentation";
+import ConnectionDisable from "../views/ConnectionDisable";
 function App() {
   return (
-      <Router>
-        <AuthProvider>
+    <Router>
+      <AuthProvider>
         <Navbar />
-        <Presentation/>
-          <Switch>
-            <PrivateRoute path="/create-post" component={CreatePost} />
-            <PrivateRoute path="/update-profile" component={UpdateProfile} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/modify-post/:slug" component={ModifyPost} />
-            <Route path="/focus/:slug" component={Focus} />
-            <Route path="/comments/:slug" component={Comments} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
-            <Route path="/forgot-password" component={ForgotPassword} />
-            <Route path="/" component={BlogPage} />
-          </Switch>
-        </AuthProvider>
-      </Router>
+        <Presentation />
+        <Switch>
+          <PrivateRoute path="/create-post" component={CreatePost} />
+          <PrivateRoute path="/Modify-post" component={ModifyPost} />
+          <PrivateRoute path="/update-profile" component={UpdateProfile} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <Route path="/connection-disable" component={ConnectionDisable} />
+          <Route path="/focus/:slug" component={Focus} />
+          <Route path="/focus/:slug" component={Focus} />
+          <Route path="/comments/:slug" component={Comments} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+          <Route path="/forgot-password" component={ForgotPassword} />
+          <Route path="/" component={BlogPage} />
+        </Switch>
+      </AuthProvider>
+    </Router>
   );
 }
 
