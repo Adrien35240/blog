@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import LittleCardDashboard from "../LittleCardDashboard/LittleCardDashboard";
 import firebase from "firebase/app";
-
+import "./dashboard-littlecard.css"
 function DashboardLittleCard(props) {
   const [articles, setArticles] = useState([]);
   const [urlImg, setUrlImg] = useState();
@@ -26,7 +26,7 @@ function DashboardLittleCard(props) {
 
   function renderArticles() {
     return (
-      <div>
+      <div className="container-dashboard-littlecard">
         {articles &&
           articles.map((article, index) => {
             return (

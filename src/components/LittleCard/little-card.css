@@ -6,8 +6,13 @@
   width: 200px;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
   padding: 4px;
-  min-height:10em;
+  min-height:18em;
   height: auto;
+  transition: box-shadow .3s;
+}
+.container-little-card:hover {
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.644);
+
 }
 .container-img-little-card {
   border:none;

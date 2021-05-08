@@ -9,14 +9,12 @@ export default function Dashboard() {
 
   return (
     <div>
-      <form>
-        {error && <div severity="error">{error}</div>}
-        <div>Dashboard de : {currentUser.email}</div>
-        <DashboardLittleCard userId={currentUser.uid} />
-        <button >
-          <Link to="/create-post"> Créer un nouveau post</Link>
-        </button>
-      </form>
+      {error && <div severity="error">{error}</div>}
+      <div className="container-dashboard-email">
+        Dashboard de : {currentUser.email}
+      </div>
+      <Link to="/create-post"> Créer un nouveau post</Link>
+      <DashboardLittleCard userId={currentUser.uid} />
     </div>
   );
 }

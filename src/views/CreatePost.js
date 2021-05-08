@@ -5,6 +5,7 @@ import firebase from "firebase/app";
 import { storage } from "../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import "../css/create-post.css"
 export default function Dashboard() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -12,6 +13,26 @@ export default function Dashboard() {
   const { currentUser } = useAuth();
   const history = useHistory();
   const [imageAsFile, setImageAsFile] = useState("");
+  const modules = {
+    toolbar: [
+      [{ header: "1" }, { header: "2" }, { font: [] }],
+      [{ size: [] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ color: [] }, { background: [] }],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image", "video"],
+      ["clean"],
+    ],
+    clipboard: {
+      // toggle to add extra line breaks when pasting HTML:
+      matchVisual: false,
+    },
+  };
 
   function handleChange(e) {
     setContent(e);
@@ -71,8 +92,8 @@ export default function Dashboard() {
         onChange={(e) => setDescription(e.target.value)}
       />
       <input type="file" onChange={handleImageAsFile} />
-      <ReactQuill value={content} onChange={handleChange} />
-      <div onClick={() => handleSubmit()}>Créer</div>
+      <ReactQuill value={content} onChange={handleChange} modules={modules} />
+      <div className="button-create" onClick={() => handleSubmit()}>Créer</div>
     </div>
   );
 }

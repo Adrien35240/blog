@@ -1,0 +1,60 @@
+.container-littlecard-dashboard {
+  display: flex;
+  flex-direction: column;
+  background-color: #cfcfcf48;
+  margin: 20px;
+  border: 1px solid #d1ccc0;
+  border-radius: 6px;
+  width: 200px;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
+  padding: 4px;
+  min-height: 18em;
+  transition: box-shadow 0.3s;
+}
+.container-littlecard-dashboard:hover {
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.644);
+}
+.container-img-little-card {
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+}
+.title-littlecard-dashboard {
+  color: #227093;
+  text-align: center;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.description-little-card {
+  text-align: left;
+  color: black;
+  margin: 4px;
+}
+#link-littlecard-dashboard {
+  text-decoration: none;
+}
+.container-button-littlecard-dashboard {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 0;
+}
+#littlecard-dashboard-update {
+  font-size: 1.8em;
+  color: black;
+  transition: color 0.3s;
+}
+#littlecard-dashboard-update:hover {
+  color: green;
+}
+.littlecard-dashboard-delete {
+  color: black;
+  font-size: 2em;
+  transition: color 0.3s;
+}
+.littlecard-dashboard-delete:hover {
+  color: red;
+}

@@ -1,56 +1,55 @@
 //NOTE: comprend les boutons modifier/supprimer par carte
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import ButtonComments from "../ButtonComments/ButtonComments";
+import { TiDelete, TiUpload } from "react-icons/ti";
 import { Link } from "react-router-dom";
-
+import "./littlecard-dashboard.css";
 export default function LittleCard(props) {
-   const [refresh, setRefresh] = useState();
-   const refreshPage = () => {
+  const [refresh, setRefresh] = useState();
+  const refreshPage = () => {
     window.location.reload();
-   };
+  };
   async function handleDelete() {
     console.log("Delete processing ...");
-     setRefresh(false);
+    setRefresh(false);
     console.log(props.id);
     const res = await firebase
       .firestore()
       .collection("articles")
       .doc(props.id)
       .delete()
-      .then(refreshPage)
+      .then(refreshPage);
     console.log(res);
   }
 
   return (
-    <div>
-      <div>
-       
-          <Link to={"/focus/" + props.id}>
-            <img
-              className="container-img-little-card"
-              src={props.img}
-              alt="no-img"
-            />
-            <div>
-              <div>{props.title}</div>
-              <div>{props.description}</div>
-            </div>
-          </Link>
-        
+    <div className="container-littlecard-dashboard">
+      <Link id="link-littlecard-dashboard" to={"/focus/" + props.id}>
+        <img
+          className="container-img-little-card"
+          src={props.img}
+          alt="no-img"
+        />
+        <div className="title-littlecard-dashboard">{props.title}</div>
+        <div className="description-little-card">{props.description}</div>
+      </Link>{" "}
+      <div className="container-button-littlecard-dashboard">
         <div>
-          <ButtonComments slug={props.id} />
+          <Link
+            id="littlecard-dashboard-update"
+            to={"/modify-post/" + props.id}
+          >
+            <TiUpload />
+          </Link>
         </div>
-        
-          <Link to={"/modify-post/" + props.id}>Modifier</Link>
-        
-      </div>
-      <div
-        onClick={() => {
-          handleDelete();
-        }}
-      >
-        Supprimer
+        <div
+          className="littlecard-dashboard-delete"
+          onClick={() => {
+            handleDelete();
+          }}
+        >
+          <TiDelete />
+        </div>{" "}
       </div>
     </div>
   );
