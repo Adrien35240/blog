@@ -1,7 +1,7 @@
 //NOTE: affiche la liste des littleCard dans le dashboard
 import React, { useState, useEffect } from "react";
 import LittleCardDashboard from "../LittleCardDashboard/LittleCardDashboard";
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 function DashboardLittleCard(props) {
   const [articles, setArticles] = useState([]);

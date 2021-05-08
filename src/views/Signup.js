@@ -30,8 +30,8 @@ export default function Signup() {
   }
 
   return (
-    <div container justify="center">
-      <div item xs={12} md={6}>
+    <div >
+      <div >
         {error && <div severity="error">{error}</div>}
 
         <div>Register</div>
@@ -66,7 +66,6 @@ export default function Signup() {
           <button
             disabled={loading}
             color="primary"
-            fullWidth={true}
             variant="contained"
             onClick={() => handleSubmit()}
           >

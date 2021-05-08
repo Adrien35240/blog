@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { storage } from "../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -72,7 +72,7 @@ export default function Dashboard() {
       />
       <input type="file" onChange={handleImageAsFile} />
       <ReactQuill value={content} onChange={handleChange} />
-      <button onClick={() => handleSubmit()}>Créer</button>
+      <div onClick={() => handleSubmit()}>Créer</div>
     </div>
   );
 }

@@ -1,35 +1,31 @@
 //NOTE: comprend les boutons modifier/supprimer par carte
 import React, { useState } from "react";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import ButtonComments from "../ButtonComments/ButtonComments";
 import { Link } from "react-router-dom";
 
-
 export default function LittleCard(props) {
-  const [refresh, setRefresh] = useState();
-
-  const refreshPage = () => {
+   const [refresh, setRefresh] = useState();
+   const refreshPage = () => {
     window.location.reload();
-  };
-
+   };
   async function handleDelete() {
-    setRefresh(false);
-   console.log(refresh);
-    await firebase
+    console.log("Delete processing ...");
+     setRefresh(false);
+    console.log(props.id);
+    const res = await firebase
       .firestore()
       .collection("articles")
       .doc(props.id)
       .delete()
-      .then(() => {
-        refreshPage();
-        console.log("Post Delete");
-      });
+      .then(refreshPage)
+    console.log(res);
   }
 
   return (
     <div>
       <div>
-        <div>
+       
           <Link to={"/focus/" + props.id}>
             <img
               className="container-img-little-card"
@@ -41,22 +37,21 @@ export default function LittleCard(props) {
               <div>{props.description}</div>
             </div>
           </Link>
-        </div>
+        
         <div>
           <ButtonComments slug={props.id} />
         </div>
-        <button>
+        
           <Link to={"/modify-post/" + props.id}>Modifier</Link>
-        </button>
+        
       </div>
-      <button
+      <div
         onClick={() => {
-          console.log("click");
           handleDelete();
         }}
       >
         Supprimer
-      </button>
+      </div>
     </div>
   );
 }

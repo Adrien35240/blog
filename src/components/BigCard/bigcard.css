@@ -1,20 +1,30 @@
 .container-big-card {
-    margin-top:2em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
 }
-#button-comment{
-    text-decoration: none;
-    color: black;
+#button-comment {
+  text-decoration: none;
+  color: black;
 }
-.big-card-title{
-    margin-top:1em;
-    font-size:2em;
-    color:#34ace0;
-    font-weight: bold;
-
+.big-card-title {
+  margin-top: 1em;
+  font-size: 2em;
+  color: #34ace0;
+  font-weight: bold;
 }
-.container-img{
-    border-radius:10px;
+.container-img {
+    display: flex;
+    width: 100%;
+    height: auto;
+  border: 1px solid red;
+  border-radius: 10px;
 }
-.big-card-content{
-
+.big-card-content {
 }
