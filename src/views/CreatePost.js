@@ -5,7 +5,7 @@ import firebase from "firebase/app";
 import { storage } from "../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import "../css/create-post.css"
+import "../css/create-post.css";
 export default function Dashboard() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -74,26 +74,33 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
-      <div>Créer un post</div>
+    <div className="container-create-post">
+      <div className="create-post-title">Créer un post</div>
 
       <input
+        required
+        placeholder="Titre du post"
         id="title"
         label="Titre"
         variant="outlined"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <input
+      <textarea
+        required
+        placeholder="Description"
         id="password"
         label="Description"
         variant="outlined"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <input type="file" onChange={handleImageAsFile} />
+      <label for="file-post">Choisir une image de présentation</label>
+      <input required id="file-post" type="file" onChange={handleImageAsFile}/>
       <ReactQuill value={content} onChange={handleChange} modules={modules} />
-      <div className="button-create" onClick={() => handleSubmit()}>Créer</div>
-    </div>
+      <div className="button-create" onClick={() => handleSubmit()}>
+        Créer
+      
+    </div></div>
   );
 }

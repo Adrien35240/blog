@@ -49,7 +49,7 @@ export default function LittleCard(props) {
           }}
         >
           <TiDelete />
-        </div>{" "}
+        </div>
       </div>
     </div>
   );

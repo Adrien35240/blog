@@ -27,7 +27,7 @@ function BlogPage() {
     return (
       <div>
         <div>
-          <Presentation />
+          {/* <Presentation /> */}
         </div>
         <div className="container-articles">
           {" "}

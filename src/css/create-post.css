@@ -1,5 +1,70 @@
-.button-create{
-    border:1px solid red;
-    height: 2em;
-    margin-bottom:2em;
+.container-create-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  height: auto;
+  margin: 20px;
+}
+.container-create-post input {
+  margin-top: 1em;
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+}
+.container-create-post input:hover {
+  border: 2px solid #34ace0;
+}
+.container-create-post textarea {
+  margin-top: 1em;
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+  width: 70%;
+  min-height: 100px;
+}
+.container-create-post textarea:hover {
+  border: 2px solid #34ace0;
+}
+.button-create {
+  text-align: center;
+  margin-top: 1em;
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+  transition: background-color 0.3s;
+
+  width: 10em;
+}
+.button-create:hover {
+  border: 2px solid #34ace0;
+  background-color: rgba(128, 128, 128, 0.384);
+}
+.ql-editor {
+  min-height: 400px;
+  border-radius: 6px;
+}
+.ql-toolbar {
+  margin-top: 1em;
+  border-radius: 6px;
+}
+.create-post-title {
+  font-size: 2em;
+  margin-top: 2em;
+  color: #34ace0;
+}
+.container-create-post label {
+  font-size: 1em;
+  margin-top: 2em;
+  color: #34ace0;
 }
