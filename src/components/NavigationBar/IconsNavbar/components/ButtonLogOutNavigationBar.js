@@ -25,7 +25,7 @@ function ButtonLogOutNavigationBar(props) {
     <div className="container-icon-navbar">
       {" "}
       {error && <div severity="error">{error}</div>}
-      <div id="id-icon-home" onClick={handleLogout}>
+      <div id="id-icon-logout" onClick={handleLogout}>
         <AiOutlineLogout />
       </div>
     </div>

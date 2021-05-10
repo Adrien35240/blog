@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import firebase from "firebase/app";
 import { storage } from "../services/database/firebase";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import Quill from "quill";
+import "quill/dist/quill.snow.css";
 import "../css/create-post.css";
 export default function Dashboard() {
   const [title, setTitle] = useState("");
@@ -13,26 +13,37 @@ export default function Dashboard() {
   const { currentUser } = useAuth();
   const history = useHistory();
   const [imageAsFile, setImageAsFile] = useState("");
-  const modules = {
-    toolbar: [
-      [{ header: "1" }, { header: "2" }, { font: [] }],
-      [{ size: [] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [{ color: [] }, { background: [] }],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
+
+  const configQuill = {
+    modules: {
+      toolbar: [
+        [{ header: [1, 2, false] }],
+        ["code-block"],
+        [{ size: [] }],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [{ color: [] }, { background: [] }],
+        [
+          { list: "ordered" },
+          { list: "bullet" },
+          { indent: "-1" },
+          { indent: "+1" },
+        ],
+        ["link", "image", "video"],
+        ["clean"],
       ],
-      ["link", "image", "video"],
-      ["clean"],
-    ],
-    clipboard: {
-      // toggle to add extra line breaks when pasting HTML:
-      matchVisual: false,
     },
+    placeholder: "Compose un article épic",
+    theme: "snow", // or 'bubble'
   };
+
+  function createQuill() {
+    new Quill("#editor-container", configQuill);
+  }
+  
+
+  useEffect(() => {
+   setTimeout(createQuill, 500, configQuill);
+  }, [])
 
   function handleChange(e) {
     setContent(e);
@@ -96,11 +107,11 @@ export default function Dashboard() {
         onChange={(e) => setDescription(e.target.value)}
       />
       <label for="file-post">Choisir une image de présentation</label>
-      <input required id="file-post" type="file" onChange={handleImageAsFile}/>
-      <ReactQuill value={content} onChange={handleChange} modules={modules} />
+      <input required id="file-post" type="file" onChange={handleImageAsFile} />
+      <div id="editor-container"></div>
       <div className="button-create" onClick={() => handleSubmit()}>
         Créer
-      
-    </div></div>
+      </div>
+    </div>
   );
 }

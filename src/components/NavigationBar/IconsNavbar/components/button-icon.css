@@ -30,3 +30,17 @@
 #id-icon-home:hover {
   background-color: #cfcfcf48;
 }
+#id-icon-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #34ace0;
+  color: #f7f1e3;
+  width: 4em;
+  transition: background-color 0.3s;
+  transition: color .3s;
+}#id-icon-logout:hover {
+  color:#ff5252;
+  background-color: #cfcfcf48;
+
+}
