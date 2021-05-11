@@ -6,7 +6,7 @@
   margin-right: auto;
   margin-left: auto;
   max-width: 1000px;
-  height: auto;
+ 
 }
 .container-create-post input {
   margin-top: 1em;
@@ -63,7 +63,7 @@
   color: #34ace0;
 }
 
-#editor-container {
+.ql-editor {
   height: 375px;
   width: 100%;
 }

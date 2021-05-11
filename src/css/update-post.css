@@ -63,7 +63,7 @@
   color: #34ace0;
 }
 
-#editor-container {
+.ql-editor {
   height: 375px;
   width: 100%;
 }
