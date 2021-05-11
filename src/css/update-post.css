@@ -1,0 +1,69 @@
+.container-update-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+  height: auto;
+}
+.container-update-post input {
+  margin-top: 1em;
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+}
+.container-update-post input:hover {
+  border: 2px solid #34ace0;
+}
+.container-update-post textarea {
+  margin-top: 1em;
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+  width: 70%;
+  min-height: 50px;
+}
+.container-update-post textarea:hover {
+  border: 2px solid #34ace0;
+}
+.button-update {
+  text-align: center;
+  margin-top: 1em;
+  border: 2px solid grey;
+  border-radius: 6px;
+  padding: 0.4em;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+  transition: background-color 0.3s;
+
+  width: 10em;
+}
+.button-update:hover {
+  border: 2px solid #34ace0;
+  background-color: #34ace048;
+}
+
+.update-post-title {
+  font-size: 2em;
+  margin-top: 2em;
+  color: #34ace0;
+}
+.container-update-post label {
+  font-size: 1em;
+  margin-top: 2em;
+  color: #34ace0;
+}
+
+#editor-container {
+  height: 375px;
+  width: 100%;
+}

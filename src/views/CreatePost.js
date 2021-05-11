@@ -95,7 +95,7 @@ export default function Dashboard() {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <label for="file-post">Choisir une image de présentation</label>
+      <label htmlFor="file-post">Choisir une image de présentation</label>
       <input required id="file-post" type="file" onChange={handleImageAsFile} />
       <ReactQuill value={content} onChange={handleChange} modules={modules} />
       <div className="button-create" onClick={() => handleSubmit()}>
