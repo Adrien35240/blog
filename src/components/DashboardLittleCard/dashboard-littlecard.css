@@ -1,5 +1,7 @@
-.container-dashboard-littlecard{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.container-dashboard-littlecard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

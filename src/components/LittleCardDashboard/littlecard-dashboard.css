@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   background-color: #cfcfcf48;
-  margin: 20px;
+ margin-top: 1em;
+ margin-left: 20px;
+ margin-right: 20px;
   border: 1px solid #d1ccc0;
   border-radius: 6px;
   width: 200px;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
   padding: 4px;
-  min-height: 18em;
+  height: auto;
   transition: box-shadow 0.3s;
 }
 .container-littlecard-dashboard:hover {
@@ -28,6 +30,8 @@
   margin-top: 10px;
 }
 .description-little-card {
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: left;
   color: black;
   margin: 4px;
@@ -46,7 +50,7 @@
   margin-bottom: 0;
   margin-left: auto;
   margin-right: 0;
-  padding-top:.4em;
+  padding-top: 0.4em;
 }
 #littlecard-dashboard-update {
   font-size: 1.8em;

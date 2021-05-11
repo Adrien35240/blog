@@ -1,21 +1,22 @@
 .container-little-card {
   background-color: #cfcfcf48;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top:1em;
   border: 1px solid #d1ccc0;
   border-radius: 6px;
   width: 200px;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
   padding: 4px;
-  min-height:18em;
+  min-height: 18em;
   height: auto;
-  transition: box-shadow .3s;
+  transition: box-shadow 0.3s;
 }
 .container-little-card:hover {
   box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.644);
-
 }
 .container-img-little-card {
-  border:none;
+  border: none;
   border-radius: 6px;
   width: 200px;
 }
@@ -28,10 +29,11 @@
   margin-top: 10px;
 }
 .description-little-card {
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: left;
   color: black;
   margin: 4px;
-
 }
 #link-little-card {
   text-decoration: none;

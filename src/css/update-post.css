@@ -21,6 +21,7 @@
   border: 2px solid #34ace0;
 }
 .container-update-post textarea {
+  resize: none;
   margin-top: 1em;
   border: 2px solid grey;
   border-radius: 6px;

@@ -37,7 +37,7 @@ export default function LittleCard(props) {
         <div>
           <Link
             id="littlecard-dashboard-update"
-            to={"/modify-post/" + props.id}
+            to={"/update-post/" + props.id}
           >
             <TiUpload />
           </Link>

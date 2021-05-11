@@ -125,7 +125,8 @@ function ModifyPost() {
       />
       <textarea
         required
-        placeholder="Description"
+        maxLength="120"
+        placeholder="Description - Limiter à 120 charactères"
         id="password"
         label="Description"
         variant="outlined"

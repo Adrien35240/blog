@@ -33,14 +33,12 @@ export default function Dashboard() {
       matchVisual: false,
     },
   };
-
   function handleChange(e) {
     setContent(e);
     console.log(e);
   }
 
-  console.log(imageAsFile);
-  const handleImageAsFile = (e) => {
+   const handleImageAsFile =  (e) => {
     const image = e.target.files[0];
     setImageAsFile((imageFile) => image);
   };
@@ -88,10 +86,11 @@ export default function Dashboard() {
       />
       <textarea
         required
-        placeholder="Description"
+        placeholder="Description - Limiter à 120 charactères"
         id="password"
         label="Description"
         variant="outlined"
+        maxlength="120"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />

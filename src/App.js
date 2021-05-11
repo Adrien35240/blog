@@ -13,7 +13,7 @@ import BlogPage from "./views/BlogPage";
 import Navbar from "./components/NavigationBar/Navbar";
 import Focus from "./views/Focus";
 import Comments from "./views/Comments";
-import ModifyPost from "./views/ModifyPost";
+import UpdatePost from "./views/UpdatePost";
 import ConnectionDisable from "./views/ConnectionDisable";
 import "./css/app.css"
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Navbar />
         <Switch>
           <PrivateRoute path="/create-post" component={CreatePost} />
-          <PrivateRoute path="/Modify-post" component={ModifyPost} />
+          <PrivateRoute path="/update-post" component={UpdatePost} />
           <PrivateRoute path="/update-profile" component={UpdateProfile} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route path="/connection-disable" component={ConnectionDisable} />
