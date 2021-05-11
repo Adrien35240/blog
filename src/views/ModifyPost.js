@@ -37,8 +37,10 @@ function ModifyPost() {
   const history = useHistory();
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsFileUpdate, setImageAsFileUpdate] = useState("");
+  const [imageUpdate, setImageUpdate] = useState("0");
   let urlcourante = document.location.href;
   const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
+  let imgLink;
   const [res, setRes] = useState([]);
   const getArticle = async () => {
     const res = await firebase
@@ -67,40 +69,43 @@ function ModifyPost() {
 
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
-    setImageAsFile((imageFile) => image);
+    console.log("input file : ", e);
+    setImageAsFileUpdate((imageFile) => image);
+    setImageUpdate("1");
   };
-  function pushImg(imageAsFile) {
-    storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
-  }
+
+  function pushImg(imageAsFile) {}
 
   async function handleSubmit() {
     console.log("start of upload");
     // async magic goes here...
-    if (imageAsFileUpdate === "") {
+    if (imageUpdate === "0") {
       console.log("imageAsFile :", imageAsFile);
-      setImageAsFileUpdate(imageAsFile);
-      console.log("imageAsFileUpdate", imageAsFileUpdate);
-      storage.ref(`/images/${imageAsFileUpdate.name}`).put(imageAsFileUpdate);
-      await pushImg(imageAsFile);
+      imgLink = imageAsFile;
     } else {
       await pushImg(imageAsFileUpdate);
+      imgLink = await storage
+        .ref("images")
+        .child(imageAsFileUpdate.name)
+        .getDownloadURL();
     }
 
     const data = {
       title: title,
       description: description,
       content: content,
-      img: await storage
-        .ref("images")
-        .child(imageAsFileUpdate.name)
-        .getDownloadURL(),
+      img: imgLink,
       user: currentUser.email,
       userId: currentUser.uid,
       date: firebase.firestore.Timestamp.now().toDate(),
     };
 
     // Add a new document in collection "article" with ID 'title'
-    const res = await firebase.firestore().collection("articles").add(data);
+    const res = await firebase
+      .firestore()
+      .collection("articles")
+      .doc(queue_url)
+      .update(data);
 
     console.log("Set: ", res);
     history.push("/dashboard");
@@ -128,12 +133,7 @@ function ModifyPost() {
         onChange={(e) => setDescription(e.target.value)}
       />
       <label htmlFor="file-post">Changer l'image de présentation ?</label>
-      <input
-        value={imageAsFileUpdate}
-        id="file-post"
-        type="file"
-        onChange={handleImageAsFile}
-      />
+      <input id="file-post" type="file" onChange={handleImageAsFile} />
       <ReactQuill value={content} onChange={handleChange} modules={modules} />
       <div className="button-update" onClick={() => handleSubmit()}>
         Enregistrer
