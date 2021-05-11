@@ -13,7 +13,7 @@ export default function BigCard(props) {
       <img className="container-img" src={props.img} alt="no-img" />
       <div className="big-card-title">{props.title}</div>
       <div className="big-card-content">{formatContent()}</div>
-      <Comments id={props.id} />
+      {/* <Comments id={props.id} /> */}
     </div>
   );
 }

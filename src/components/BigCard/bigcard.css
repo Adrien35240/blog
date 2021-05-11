@@ -1,12 +1,12 @@
 .container-big-card {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 2em;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
   height: auto;
 }
 #button-comment {
@@ -20,10 +20,11 @@
   font-weight: bold;
 }
 .container-img {
-    display: flex;
-    width: 100%;
-    height: auto;
+  display: flex;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
-.big-card-content {
+img{
+  width: 100%;
 }
