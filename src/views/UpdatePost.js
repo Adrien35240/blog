@@ -30,7 +30,6 @@ function ModifyPost() {
     },
   };
 
-  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const { currentUser } = useAuth();
@@ -52,7 +51,6 @@ function ModifyPost() {
       console.log("No such document!");
     } else {
       console.log("Document data:", res.data());
-      setTitle(res.data().title);
       setDescription(res.data().description);
       setContent(res.data().content);
       setImageAsFile(res.data().img);
@@ -91,7 +89,6 @@ function ModifyPost() {
     }
 
     const data = {
-      title: title,
       description: description,
       content: content,
       img: imgLink,
@@ -114,15 +111,7 @@ function ModifyPost() {
     <div className="container-update-post">
       <div className="update-post-title">Modifier le post</div>
 
-      <input
-        required
-        placeholder="Titre du post"
-        id="title"
-        label="Titre"
-        variant="outlined"
-        value={title || "Données absentes"}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+     
       <textarea
         required
         maxLength="120"

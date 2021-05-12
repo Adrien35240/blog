@@ -2,24 +2,31 @@
   background-color: #cfcfcf48;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top:1em;
+  margin-top: 1em;
   border: 1px solid #d1ccc0;
   border-radius: 6px;
   width: 200px;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
   padding: 4px;
-  min-height: 18em;
-  height: auto;
+  height: 300px;
   transition: box-shadow 0.3s;
 }
 .container-little-card:hover {
   box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.644);
 }
 .container-img-little-card {
+  display: flex;
+  height: 150px;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #cfcfcfb0;
+}
+.img-little-card {
   border: none;
   border-radius: 6px;
-  width: 200px;
 }
+
 .title-little-card {
   color: #227093;
   text-align: center;
@@ -29,12 +36,32 @@
   margin-top: 10px;
 }
 .description-little-card {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  height: 100%;
+  font-size: 0.9vw;
   text-align: left;
   color: black;
   margin: 4px;
 }
 #link-little-card {
   text-decoration: none;
+}
+@media screen and (max-width: 1100px) {
+  .description-little-card {
+    font-size: 1.2vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .description-little-card {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .description-little-card {
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .description-little-card {
+    font-size: 3vw;
+  }
 }

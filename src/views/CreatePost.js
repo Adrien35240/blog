@@ -7,7 +7,6 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "../css/create-post.css";
 export default function Dashboard() {
-  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const { currentUser } = useAuth();
@@ -55,7 +54,6 @@ export default function Dashboard() {
     await pushImg(imageAsFile);
 
     const data = {
-      title: title,
       description: description,
       content: content,
       img: await storage.ref("images").child(imageAsFile.name).getDownloadURL(),
@@ -75,15 +73,6 @@ export default function Dashboard() {
     <div className="container-create-post">
       <div className="create-post-title">Créer un post</div>
 
-      <input
-        required
-        placeholder="Titre du post"
-        id="title"
-        label="Titre"
-        variant="outlined"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
       <textarea
         required
         placeholder="Description - Limiter à 120 charactères"
