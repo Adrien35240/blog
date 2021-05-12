@@ -6,11 +6,14 @@ import { storage } from "../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "../css/create-post.css";
+import imageCompression from "browser-image-compression";
+
 export default function Dashboard() {
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const { currentUser } = useAuth();
   const history = useHistory();
+  const [imgLink, setImgLink] = useState("");
   const [imageAsFile, setImageAsFile] = useState("");
   const modules = {
     toolbar: [
@@ -37,26 +40,13 @@ export default function Dashboard() {
     console.log(e);
   }
 
-   const handleImageAsFile =  (e) => {
-    const image = e.target.files[0];
-    setImageAsFile((imageFile) => image);
-  };
-  function pushImg(imageAsFile) {
-    storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile);
-  }
-
   async function handleSubmit() {
     console.log("start of upload");
-    // async magic goes here...
-    if (imageAsFile === "") {
-      console.error(`not an image, the image file is a ${typeof imageAsFile}`);
-    }
-    await pushImg(imageAsFile);
-
+      console.log("imgLink = ", imgLink);
     const data = {
       description: description,
       content: content,
-      img: await storage.ref("images").child(imageAsFile.name).getDownloadURL(),
+      img: imgLink,
       user: currentUser.email,
       userId: currentUser.uid,
       date: firebase.firestore.Timestamp.now().toDate(),
@@ -68,7 +58,46 @@ export default function Dashboard() {
     console.log("Set: ", res);
     history.push("/dashboard");
   }
+  //NOTE:Compress image
 
+  function handleImageAsFile(e) {
+    handleImageUpload(e);
+
+    async function handleImageUpload(e) {
+      const imageFile = e.target.files[0];
+      console.log("originalFile instanceof Blob", imageFile instanceof Blob); // true
+      console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+
+      const options = {
+        maxSizeMB: 1,
+        maxWidthOrHeight: 1920,
+        useWebWorker: true,
+      };
+      try {
+        const compressedFile = await imageCompression(imageFile, options);
+        console.log(
+          "compressedFile instanceof Blob",
+          compressedFile instanceof Blob
+        ); // true
+        console.log(
+          `compressedFile size ${compressedFile.size / 1024 / 1024} MB`
+        ); // smaller than maxSizeMB
+        await storage.ref(`/images/${compressedFile.name}`).put(compressedFile);
+        try {
+          const  request = await storage
+            .ref("images")
+            .child(compressedFile.name)
+            .getDownloadURL();
+          console.log("transmission ok => request = ", request);
+          setImgLink(request);
+        } catch (error) {
+          console.log("getUrl error :", error);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
   return (
     <div className="container-create-post">
       <div className="create-post-title">Créer un post</div>
@@ -79,7 +108,7 @@ export default function Dashboard() {
         id="password"
         label="Description"
         variant="outlined"
-        maxlength="120"
+        maxLength="120"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />

@@ -41,6 +41,7 @@ function BlogPage() {
                     img={article.img}
                     slug={article.title}
                     id={article.id}
+                    pseudo={article.pseudo}
                   />
                 </div>
               );
