@@ -6,7 +6,7 @@ import { useAuth } from "../../../services/security/contexts/AuthContext";
 import ButtonLogOutNavigationBar from "./components/ButtonLogOutNavigationBar";
 import "./icon-navbar.css"
 function IconsNavbar() {
-  const { currentUser, logout } = useAuth();
+  const { currentUser} = useAuth();
 
   return (
     <div className="container-icon-navbar">

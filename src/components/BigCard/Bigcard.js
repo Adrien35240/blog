@@ -1,5 +1,4 @@
 import React from "react";
-import Comments from "../../components/Comments/Comments";
 import "./bigcard.css";
 export default function BigCard(props) {
   function formatContent() {

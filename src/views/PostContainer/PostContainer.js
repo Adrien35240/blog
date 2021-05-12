@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import LittleCard from "../components/LittleCard/LittleCard";
+import LittleCard from "../../components/LittleCard/LittleCard";
 import firebase from "firebase/app";
 import "firebase/app";
-import "../css/blogpage.css";
-import Presentation from "../views/Presentation";
-function BlogPage() {
+import "./post-container.css";
+function PostContainer() {
   const [articles, setArticles] = useState([]);
 
   //NOTE: Recupere le lien d'une image sur firebase
@@ -54,4 +53,4 @@ function BlogPage() {
   return <div>{renderArticles()}</div>;
 }
 
-export default BlogPage;
+export default PostContainer;

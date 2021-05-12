@@ -1,17 +1,15 @@
 //NOTE: comprend les boutons modifier/supprimer par carte
-import React, { useState } from "react";
+import React from "react";
 import firebase from "firebase/app";
 import { TiDelete, TiUpload } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import "./littlecard-dashboard.css";
 export default function LittleCard(props) {
-  const [refresh, setRefresh] = useState();
   const refreshPage = () => {
     window.location.reload();
   };
   async function handleDelete() {
     console.log("Delete processing ...");
-    setRefresh(false);
     console.log(props.id);
     const res = await firebase
       .firestore()

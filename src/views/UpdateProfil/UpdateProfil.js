@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import { useAuth } from "../services/security/contexts/AuthContext";
+import { useAuth } from "../../services/security/contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 
-export default function UpdateProfile() {
+export default function UpdateProfil() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();

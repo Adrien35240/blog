@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../services/security/contexts/AuthContext";
+import { useAuth } from "../../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/firestore";
-import { storage } from "../services/database/firebase";
+import { storage } from "../../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import "../css/update-post.css";
+import "./update-post.css";
 
 function ModifyPost() {
   const modules = {
@@ -111,7 +111,6 @@ function ModifyPost() {
     <div className="container-update-post">
       <div className="update-post-title">Modifier le post</div>
 
-     
       <textarea
         required
         maxLength="120"
@@ -119,7 +118,7 @@ function ModifyPost() {
         id="password"
         label="Description"
         variant="outlined"
-        value={description || "Données absentes"}
+        value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
       <label htmlFor="file-post">Changer l'image de présentation ?</label>

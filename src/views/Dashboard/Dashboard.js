@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import { useAuth } from "../services/security/contexts/AuthContext";
+import React from "react";
+import { useAuth } from "../../services/security/contexts/AuthContext";
 import { Link } from "react-router-dom";
-import DashboardLittleCard from "../components/DashboardLittleCard/DashboardLittleCard";
-import "../css/dash-board.css"
+import DashboardLittleCard from "../../components/DashboardLittleCard/DashboardLittleCard";
+import "./dash-board.css"
 export default function Dashboard() {
-  const [error, setError] = useState("");
   const { currentUser } = useAuth();
 
   return (
     <div className="container-dash-board">
-      {error && <div severity="error">{error}</div>}
       <div className="container-dashboard-email">
         Dashboard de : {currentUser.email}
       </div>

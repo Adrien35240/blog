@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { useAuth } from "../services/security/contexts/AuthContext"
+import { useAuth } from "../../services/security/contexts/AuthContext"
 import { Link } from "react-router-dom"
 
 export default function ForgotPassword() {
@@ -7,7 +7,6 @@ export default function ForgotPassword() {
   const { resetPassword } = useAuth()
   const [error, setError] = useState("")
   const [message, setMessage] = useState("")
-  const [loading, setLoading] = useState(false)
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -15,14 +14,12 @@ export default function ForgotPassword() {
     try {
       setMessage("")
       setError("")
-      setLoading(true)
       await resetPassword(emailRef.current.value)
       setMessage("Check your inbox for further instructions")
     } catch {
       setError("Failed to reset password")
     }
 
-    setLoading(false)
   }
 
   return (

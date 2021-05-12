@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import BigCard from "../components/BigCard/Bigcard";
+import BigCard from "../../components/BigCard/Bigcard";
 import firebase from "firebase/app";
-import "../css/focus.css";
-function Focus() {
+import "./focus-post.css";
+function FocusPost() {
   const [articles, setArticles] = useState([]);
 
   function getArticleFocused() {
@@ -45,4 +45,4 @@ function Focus() {
   );
 }
 
-export default Focus;
+export default FocusPost;

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { useAuth } from "../services/security/contexts/AuthContext";
+import { useAuth } from "../../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import firebase from "firebase/app";
-import { storage } from "../services/database/firebase";
-import Quill from "quill"
+import { storage } from "../../services/database/firebase";
+import Quill from "quill";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import "../css/create-post.css";
+import "./create-post.css";
 import imageCompression from "browser-image-compression";
 import ImageCompress from "quill-image-compress";
+
+
+
 export default function Dashboard() {
   Quill.register("modules/imageCompress", ImageCompress);
   const [description, setDescription] = useState("");
@@ -77,7 +80,7 @@ export default function Dashboard() {
       console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
 
       const options = {
-        maxSizeMB: .1,
+        maxSizeMB: 0.1,
         maxWidthOrHeight: 1920,
         useWebWorker: true,
       };

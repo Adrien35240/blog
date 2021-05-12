@@ -36,7 +36,7 @@
   margin-top: 10px;
 }
 .description-little-card {
-  height: 100%;
+  height: auto;
   font-size: 0.9vw;
   text-align: left;
   color: black;
