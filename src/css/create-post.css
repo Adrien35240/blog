@@ -64,7 +64,10 @@
   color: #34ace0;
 }
 
-.ql-editor {
+#editor-container{
   height: 375px;
+  width: 100%;
+}
+.ql-toolbar{
   width: 100%;
 }

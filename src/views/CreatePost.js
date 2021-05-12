@@ -3,18 +3,19 @@ import { useAuth } from "../services/security/contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import firebase from "firebase/app";
 import { storage } from "../services/database/firebase";
+import Quill from "quill"
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "../css/create-post.css";
 import imageCompression from "browser-image-compression";
-
+import ImageCompress from "quill-image-compress";
 export default function Dashboard() {
+  Quill.register("modules/imageCompress", ImageCompress);
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const { currentUser } = useAuth();
   const history = useHistory();
   const [imgLink, setImgLink] = useState("");
-  const [imageAsFile, setImageAsFile] = useState("");
   const modules = {
     toolbar: [
       [{ header: "1" }, { header: "2" }, { font: [] }],
@@ -34,6 +35,13 @@ export default function Dashboard() {
       // toggle to add extra line breaks when pasting HTML:
       matchVisual: false,
     },
+    imageCompress: {
+      quality: 0.7, // default
+      maxWidth: 1000, // default
+      maxHeight: 1000, // default
+      imageType: "image/jpeg", // default
+      debug: true, // default
+    },
   };
   function handleChange(e) {
     setContent(e);
@@ -42,7 +50,7 @@ export default function Dashboard() {
 
   async function handleSubmit() {
     console.log("start of upload");
-      console.log("imgLink = ", imgLink);
+    console.log("imgLink = ", imgLink);
     const data = {
       description: description,
       content: content,
@@ -69,7 +77,7 @@ export default function Dashboard() {
       console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
 
       const options = {
-        maxSizeMB: 1,
+        maxSizeMB: .1,
         maxWidthOrHeight: 1920,
         useWebWorker: true,
       };
@@ -84,7 +92,7 @@ export default function Dashboard() {
         ); // smaller than maxSizeMB
         await storage.ref(`/images/${compressedFile.name}`).put(compressedFile);
         try {
-          const  request = await storage
+          const request = await storage
             .ref("images")
             .child(compressedFile.name)
             .getDownloadURL();
