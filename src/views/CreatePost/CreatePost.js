@@ -61,6 +61,7 @@ export default function Dashboard() {
       user: currentUser.email,
       userId: currentUser.uid,
       date: firebase.firestore.Timestamp.now().toDate(),
+      publish: false,
     };
 
     // Add a new document in collection "article" with ID 'title'

@@ -39,6 +39,7 @@ async function getDocuments() {
                   img={article.img}
                   slug={article.title}
                   id={article.id}
+                  publish={article.publish}
                 />
               </div>
             );

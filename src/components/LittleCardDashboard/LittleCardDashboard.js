@@ -2,6 +2,7 @@
 import React from "react";
 import firebase from "firebase/app";
 import { TiDelete, TiUpload } from "react-icons/ti";
+import { MdPublish } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./littlecard-dashboard.css";
 export default function LittleCard(props) {
@@ -32,6 +33,9 @@ export default function LittleCard(props) {
         <div className="description-little-card">{props.description}</div>
       </Link>{" "}
       <div className="container-button-littlecard-dashboard">
+        <div className="littlecard-dashboard-publish">
+          <MdPublish />
+        </div>
         <div>
           <Link
             id="littlecard-dashboard-update"
@@ -47,6 +51,10 @@ export default function LittleCard(props) {
           }}
         >
           <TiDelete />
+          {props.publish
+            ? () => console.log(`article ${props.id} publié`)
+            : console.log(`article ${props.id} non-publié`)}
+          <span className="tooltip-delete">Delete Post</span>
         </div>
       </div>
     </div>
