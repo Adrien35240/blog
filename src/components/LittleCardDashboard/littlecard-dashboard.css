@@ -74,6 +74,7 @@
   color: #33d9b2;
   font-size: 2em;
   transition: transform 0.3s;
+  height: 30px;
 }
 .littlecard-dashboard-publish:hover {
   color: #ff5252;
@@ -81,7 +82,17 @@
 }
 .littlecard-dashboard-publish-off {
   color: #ff5252;
+    font-size: 2em;
+  transition: transform 0.3s;
+  height: 30px;
   transform: rotate(180deg);
+}.littlecard-dashboard-publish-off:hover{
+  color: #33d9b2;
+    font-size: 2em;
+  transition: transform 0.3s;
+  height: 30px;
+  transform: rotate(0deg);
+
 }
 .littlecard-dashboard-delete .tooltip-delete {
   position: absolute;

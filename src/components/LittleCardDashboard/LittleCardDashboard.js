@@ -33,7 +33,7 @@ export default function LittleCard(props) {
         <div className="description-little-card">{props.description}</div>
       </Link>{" "}
       <div className="container-button-littlecard-dashboard">
-        <div className="littlecard-dashboard-publish">
+        <div className="littlecard-dashboard-publish-off">
           <MdPublish />
         </div>
         <div>
