@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import LittleCard from "../../components/LittleCard/LittleCard";
+import LittleCard from "./LittleCard/LittleCard";
 import firebase from "firebase/app";
 import "firebase/app";
 import "./post-container.css";
@@ -34,14 +34,15 @@ function PostContainer() {
             articles.map((article, index) => {
               return (
                 <div key={index}>
-                  <LittleCard
+                  {article.publish?    <LittleCard
                     title={article.title}
                     description={article.description}
                     img={article.img}
                     slug={article.title}
                     id={article.id}
                     pseudo={article.pseudo}
-                  />
+                  />:<></>}
+             
                 </div>
               );
             })}

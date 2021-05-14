@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth } from "../../services/security/contexts/AuthContext";
 import { Link } from "react-router-dom";
-import DashboardLittleCard from "../../components/DashboardLittleCard/DashboardLittleCard";
+import DashboardLittleCard from "./DashboardLittleCard/DashboardLittleCard";
 import "./dash-board.css"
 export default function Dashboard() {
   const { currentUser } = useAuth();

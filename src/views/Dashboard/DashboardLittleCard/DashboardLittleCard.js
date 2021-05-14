@@ -1,6 +1,6 @@
 //NOTE: affiche la liste des littleCard dans le dashboard
 import React, { useState, useEffect } from "react";
-import LittleCardDashboard from "../LittleCardDashboard/LittleCardDashboard";
+import LittleCardDashboard from "./LittleCardDashboard/LittleCardDashboard";
 import firebase from "firebase/app";
 import "./dashboard-littlecard.css"
 function DashboardLittleCard(props) {

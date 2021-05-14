@@ -14,7 +14,7 @@
   transition: box-shadow 0.3s;
 }
 .container-littlecard-dashboard:hover {
-  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.644);
+  box-shadow: 0 4px 4px 0px #84817a;
 }
 .container-img-little-card {
   border: none;
@@ -62,7 +62,6 @@
 }
 .littlecard-dashboard-delete {
   color: #34ace0;
-
   font-size: 2em;
   transition: color 0.3s;
 }
@@ -73,26 +72,25 @@
 .littlecard-dashboard-publish {
   color: #33d9b2;
   font-size: 2em;
-  transition: transform 0.3s;
   height: 30px;
 }
 .littlecard-dashboard-publish:hover {
+  transition: transform 0.3s;
   color: #ff5252;
   transform: rotate(180deg);
 }
 .littlecard-dashboard-publish-off {
   color: #ff5252;
-    font-size: 2em;
-  transition: transform 0.3s;
+  font-size: 2em;
   height: 30px;
   transform: rotate(180deg);
-}.littlecard-dashboard-publish-off:hover{
+}
+.littlecard-dashboard-publish-off:hover {
   color: #33d9b2;
-    font-size: 2em;
+  font-size: 2em;
   transition: transform 0.3s;
   height: 30px;
   transform: rotate(0deg);
-
 }
 .littlecard-dashboard-delete .tooltip-delete {
   position: absolute;
@@ -102,7 +100,7 @@
   border-radius: 6px;
   background-color: #ff525248;
   color: #b33939;
-  margin-top: 24px;
+  margin-top: -30px;
   margin-left: -72px;
 }
 .littlecard-dashboard-delete:hover .tooltip-delete {
