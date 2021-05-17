@@ -1,9 +1,10 @@
 //TODO: afficher le bouton dashboard pour un utilisateur connecté
 import React from "react";
-import TitleNavigationBar from "./components/TitleNavigationBar";
-import ButtonNavigationBar from "./components/ButtonNavigationBar";
+import TitleNavigationBar from "./icons/TitleNavigationBar";
+import ButtonNavigationBar from "./icons/ButtonNavigationBar";
+import ToggleDarkMode from './toggle-darkMode/ToggleDarkMode'
 import { useAuth } from "../../../services/security/contexts/AuthContext";
-import ButtonLogOutNavigationBar from "./components/ButtonLogOutNavigationBar";
+import ButtonLogOutNavigationBar from "./icons/ButtonLogOutNavigationBar";
 import "./icon-navbar.css"
 function IconsNavbar() {
   const { currentUser} = useAuth();
@@ -18,7 +19,7 @@ function IconsNavbar() {
         />
       </div>
       <div className="container-icon-link">
-        
+        <ToggleDarkMode/>
         {currentUser ? (
           <ButtonNavigationBar
             color="inherit"

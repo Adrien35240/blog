@@ -1,34 +1,27 @@
 .container-littlecard-dashboard {
   display: flex;
   flex-direction: column;
-  background-color: #cfcfcf48;
+  background-color: var(--bg-item);
   margin-top: 1em;
   margin-left: 20px;
   margin-right: 20px;
-  border: 1px solid #d1ccc0;
+  border: 1px solid var(--tertiary-color);
   border-radius: 6px;
   width: 200px;
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.644);
+  box-shadow: 0 2px 2px -2px var(--box-shadow-color);
   padding: 4px;
   height: auto;
   transition: box-shadow 0.3s;
 }
 .container-littlecard-dashboard:hover {
-  box-shadow: 0 4px 4px 0px #84817a;
+  box-shadow: 0 4px 4px 0px var(--box-shadow-color);
 }
 .container-img-little-card {
   border: none;
   border-radius: 6px;
   width: 200px;
 }
-.title-littlecard-dashboard {
-  color: #227093;
-  text-align: center;
-  font-size: 17px;
-  letter-spacing: 0.06em;
-  font-weight: bold;
-  margin-top: 10px;
-}
+
 .description-little-card {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -56,6 +49,7 @@
   font-size: 1.8em;
   color: #34ace0;
   transition: color 0.3s;
+  cursor: default;
 }
 #littlecard-dashboard-update:hover {
   color: #33d9b2;
@@ -96,13 +90,43 @@
   position: absolute;
   font-size: 0.5em;
   visibility: hidden;
-  border: 0.5px solid #b3393948;
+  border: 1px solid #b33939;
   border-radius: 6px;
-  background-color: #ff525248;
-  color: #b33939;
+  background-color: #ff5252;
+  color: #000000;
   margin-top: -30px;
   margin-left: -72px;
 }
 .littlecard-dashboard-delete:hover .tooltip-delete {
   visibility: visible;
+}
+#littlecard-dashboard-update .tooltip-update {
+  position: absolute;
+  font-size: 0.54em;
+  visibility: hidden;
+  border: 1px solid #218c74;
+  border-radius: 6px;
+  background-color: #33d9b2;
+  color: #000000;
+  margin-top: -30px;
+  margin-left: -42px;
+}
+#littlecard-dashboard-update:hover .tooltip-update {
+  visibility: visible;
+}
+.littlecard-dashboard-publish .tooltip-publish {
+  position: absolute;
+  font-size: 0.5em;
+  visibility: hidden;
+  border: 1px solid #218c74;
+  border-radius: 6px;
+  background-color: #33d9b2;
+  color: #000000;
+  margin-top: -30px;
+  margin-left: -72px;
+}
+.littlecard-dashboard-publish:hover .tooltip-publish {
+  visibility: visible;
+}
+.loading-modal {
 }

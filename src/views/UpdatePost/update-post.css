@@ -65,6 +65,6 @@
 }
 
 .ql-editor {
-  height: 375px;
+  min-height: 375px;
   width: 100%;
 }

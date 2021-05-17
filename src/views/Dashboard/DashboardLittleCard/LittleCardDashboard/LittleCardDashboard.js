@@ -7,9 +7,12 @@ import { MdPublish } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./littlecard-dashboard.css";
 export default function LittleCard(props) {
+  const [loading,setLoading] = useState(Boolean)
   const history = useHistory();
   const [publish, setPublish] = useState(Boolean);
+  // setLoading(false)
   useEffect(() => {
+    
     setPublish(props.publish);
   }, [publish]);
 
@@ -40,7 +43,9 @@ export default function LittleCard(props) {
   }
 
   return (
+    
     <div className="container-littlecard-dashboard">
+      {/* {loading ? <div>LOADING</div> : <div></div>} */}
       <Link id="link-littlecard-dashboard" to={"/focus-post/" + props.id}>
         <img
           className="container-img-little-card"
@@ -51,45 +56,51 @@ export default function LittleCard(props) {
         <div className="description-little-card">{props.description}</div>
       </Link>{" "}
       <div className="container-button-littlecard-dashboard">
-       <div> {publish ? (
-          <div
-            className="littlecard-dashboard-publish"
-            onClick={() => {
-              handlePublish();
-            }}
+        <div>
+          {" "}
+          {publish ? (
+            <div
+              className="littlecard-dashboard-publish"
+              onClick={() => {
+                handlePublish();
+              }}
+            >
+              <MdPublish />
+            </div>
+          ) : (
+            <div
+              className="littlecard-dashboard-publish-off"
+              onClick={() => {
+                handlePublish();
+              }}
+            >
+              <MdPublish />
+            </div>
+          )}
+          {publish
+            ? console.log(`article ${props.id} publié`)
+            : console.log(`article ${props.id} non-publié`)}
+        </div>
+        <div>
+          <Link
+            id="littlecard-dashboard-update"
+            to={"/update-post/" + props.id}
           >
-            <MdPublish />
-          </div>
-        ) : (
-          <div
-            className="littlecard-dashboard-publish-off"
-            onClick={() => {
-              handlePublish();
-            }}
-          >
-            <MdPublish />
-          </div>
-        )}
-        {publish
-          ? console.log(`article ${props.id} publié`)
-          : console.log(`article ${props.id} non-publié`)}
-      </div>
-      <div>
-        <Link id="littlecard-dashboard-update" to={"/update-post/" + props.id}>
-          <TiUpload />
-        </Link>
-      </div>
-      <div
-        className="littlecard-dashboard-delete"
-        onClick={() => {
-          handleDelete();
-        }}
-      >
-        <TiDelete />
+            <TiUpload />
+            <span className="tooltip-update">Update Post</span>
+          </Link>
+        </div>
+        <div
+          className="littlecard-dashboard-delete"
+          onClick={() => {
+            handleDelete();
+          }}
+        >
+          <TiDelete />
 
-        <span className="tooltip-delete">Delete Post</span>
+          <span className="tooltip-delete">Delete Post</span>
+        </div>
       </div>
-      </div>
-      </div>
+    </div>
   );
 }

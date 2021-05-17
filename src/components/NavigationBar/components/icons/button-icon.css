@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background-color: #34ace0;
+  background-color: var(--primary-color);
   color: #f7f1e3;
   width: 5em;
   font-size: 17px;
@@ -16,31 +16,31 @@
   transition: background-color 0.3s;
 }
 #id-icon-link:hover {
-  background-color: #cfcfcf48;
+  background-color: var(--icon-navbar-hover);
 }
 #id-icon-home {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #34ace0;
+  background-color: var(--primary-color);
   color: #f7f1e3;
   width: 4em;
   transition: background-color 0.3s;
 }
 #id-icon-home:hover {
-  background-color: #cfcfcf48;
+  background-color:var(--icon-navbar-hover);
 }
 #id-icon-logout {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #34ace0;
+  background-color: var(--primary-color);
   color: #f7f1e3;
   width: 4em;
   transition: background-color 0.3s;
   transition: color .3s;
 }#id-icon-logout:hover {
-  color:#ff5252;
-  background-color: #cfcfcf48;
+  color:var(--alert-color);
+  background-color: var(--icon-navbar-hover);
 
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BigCard from "../../components/BigCard/Bigcard";
+import BigCard from "./BigCard/Bigcard";
 import firebase from "firebase/app";
 import "./focus-post.css";
 function FocusPost() {

@@ -1,5 +1,5 @@
 import React from "react";
-import IconsNavbar from "./IconsNavbar/IconsNavbar";
+import IconsNavbar from "./components/IconsNavbar";
 import "./navbar.css"
 export default function Navbar() {
   return (
