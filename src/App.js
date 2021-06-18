@@ -21,19 +21,21 @@ function App() {
       <Router>
         <AuthProvider>
           <Navbar />
-          <Switch>
-            <PrivateRoute path="/create-post" component={CreatePost} />
-            <PrivateRoute path="/update-post" component={UpdatePost} />
-            <PrivateRoute path="/update-profil" component={UpdateProfil} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <Route path="/home-page" component={HomePage} />
-            <Route path="/focus-post/:slug" component={FocusPost} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
-            <Route path="/forgot-password" component={ForgotPassword} />
-            <Route path="/blog" component={PostContainer} />
-            <Route path="/" component={HomePage} />
-          </Switch>
+          <div className="container-global">
+            <Switch>
+              <PrivateRoute path="/create-post" component={CreatePost} />
+              <PrivateRoute path="/update-post" component={UpdatePost} />
+              <PrivateRoute path="/update-profil" component={UpdateProfil} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <Route path="/home-page" component={HomePage} />
+              <Route path="/focus-post/:slug" component={FocusPost} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/blog" component={PostContainer} />
+              <Route path="/" component={HomePage} />
+            </Switch>
+          </div>
         </AuthProvider>
       </Router>
     </div>

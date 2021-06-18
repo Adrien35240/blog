@@ -9,7 +9,7 @@
   justify-content: center;
   text-decoration: none;
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--icon-color);
   width: 5em;
   font-size: 17px;
   letter-spacing: 0.06em;
@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--icon-color);
   width: 4em;
   transition: background-color 0.3s;
 }
@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
-  color:var(--secondary-color);
+  color:var(--icon-color);
   width: 4em;
   transition: background-color 0.3s;
   transition: color .3s;

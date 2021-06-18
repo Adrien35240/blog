@@ -8,6 +8,7 @@
   margin-left: auto;
   max-width: 1000px;
   height: auto;
+  color:var(--font-color)
 }
 #button-comment {
   text-decoration: none;

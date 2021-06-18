@@ -1,11 +1,106 @@
 .container-home-page {
   font-family: var(--font-familly-secondary);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.container-landing-grid {
-  display: grid;
-  grid-template-columns: 40px auto 40px auto 40px;
-  grid-template-rows: 100px auto 100px ;
+
+.container-presentation {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 100vh;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
 }
-.name {
-  font-size: 80px;
+.title {
+  font-size: 2rem;
+}
+.description {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  text-indent: 5em;
+}
+.container-next {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+.container-competences {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  scroll-snap-align: center;
+}
+.container-work {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+}
+.container-contact {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  scroll-snap-align: center;
+}
+.container-langages {
+  border: 1px solid var(--font-color);
+  border-radius: 6px;
+  height: 75vh;
+  margin-right: 5vw;
+  padding: 2rem;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-front-end {
+  border: 1px solid var(--font-color);
+  border-radius: 6px;
+  height: 75vh;
+  margin-right: 5vw;
+  padding: 2rem;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-back-end {
+  border: 1px solid var(--font-color);
+  border-radius: 6px;
+  height: 75vh;
+  margin-right: 5vw;
+  padding: 2rem;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.competences-title {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.section-resume{
+  width: 100%;
+  margin-top: 3rem;
 }

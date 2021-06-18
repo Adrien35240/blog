@@ -1,6 +1,11 @@
+body{
+  background-image: none;
+}
 .container-post-page{
   display: flex;
   flex-direction: row;
+  margin-top: 2rem;
+
 }
 .container-articles {
   display: flex;

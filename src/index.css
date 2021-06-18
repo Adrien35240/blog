@@ -11,12 +11,13 @@
   --box-shadow-color: rgba(0, 0, 0, 0.644);
   --icon-navbar-hover: #cfcfcf48;
   --bg-item: white;
+  --icon-color:#34ace0;
 }
 
 [data-theme="dark"] {
   --font-familly-primary: Source Sans Pro, sans-serif;
   --primary-color: #2c2c54;
-  --secondary-color: #d1ccc0;
+  --secondary-color: #474787;
   --tertiary-color: #2c2c54;
   --alert-color: #ff5252;
   --font-color: #e1e1ff;
@@ -25,9 +26,19 @@
   --box-shadow-color: #2c2c54;
   --icon-navbar-hover: #706fd348;
   --bg-item: #40407a;
+  --icon-color:#e1e1ff;
 }
 body {
+ 
+  height: 100%;
+  width: 100%;
   margin: 0;
+
   font-family: var(--font-familly-primary);
   background-color: var(--bg-color);
+  overflow-y: scroll;
+}
+html{
+  scroll-snap-type: y proximity;
+
 }
