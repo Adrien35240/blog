@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./toggle-dark-mode.css";
 function ToggleDarkMode() {
-  const [toggleSwitch, setToggleSwitch] = useState("");
   useEffect(() => {
-    const toggleBox = document.querySelector(
+   document.querySelector(
       '.theme-switch input[type="checkbox"]'
     );
-    setToggleSwitch(toggleBox);
   }, []);
 
   function switchTheme(e) {
@@ -17,7 +15,6 @@ function ToggleDarkMode() {
     }
   }
 
-  //    toggleSwitch.addEventListener("change", switchTheme, false);
 
   return (
     <div className="theme-switch-wrapper">

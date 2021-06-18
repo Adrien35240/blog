@@ -1,20 +1,15 @@
 //NOTE: comprend les boutons modifier/supprimer par carte
 import React, { useState, useEffect } from "react";
 import firebase from "firebase/app";
-import { useHistory } from "react-router-dom";
 import { TiDelete, TiUpload } from "react-icons/ti";
 import { MdPublish } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./littlecard-dashboard.css";
 export default function LittleCard(props) {
-  const [loading,setLoading] = useState(Boolean)
-  const history = useHistory();
   const [publish, setPublish] = useState(Boolean);
-  // setLoading(false)
   useEffect(() => {
-    
     setPublish(props.publish);
-  }, [publish]);
+  }, [props]);
 
   const refreshPage = () => {
     window.location.reload();
@@ -39,13 +34,11 @@ export default function LittleCard(props) {
       .doc(props.id)
       .update({ publish: !publish });
 
-   refreshPage()
+    refreshPage();
   }
 
   return (
-    
     <div className="container-littlecard-dashboard">
-      {/* {loading ? <div>LOADING</div> : <div></div>} */}
       <Link id="link-littlecard-dashboard" to={"/focus-post/" + props.id}>
         <img
           className="container-img-little-card"

@@ -1,30 +1,30 @@
 :root {
   --font-familly-primary: Source Sans Pro, sans-serif;
-  --primary-color: #34ace0;
-  --secondary-color: #d1ccc0;
-  --tertiary-color:#84817a;
+  --font-familly-secondary: "Nova Mono", monospace;
+  --primary-color: white;
+  --secondary-color: #34ace0;
+  --tertiary-color: #84817a;
   --alert-color: #ff5252;
   --font-color: #424242;
-  --bg-color: #f7f1e3;
+  --bg-color: white;
   --heading-color: #292922;
   --box-shadow-color: rgba(0, 0, 0, 0.644);
   --icon-navbar-hover: #cfcfcf48;
-  --bg-item:#cfcfcf48;
+  --bg-item: white;
 }
 
 [data-theme="dark"] {
   --font-familly-primary: Source Sans Pro, sans-serif;
   --primary-color: #2c2c54;
   --secondary-color: #d1ccc0;
-  --tertiary-color:#2c2c54;
+  --tertiary-color: #2c2c54;
   --alert-color: #ff5252;
   --font-color: #e1e1ff;
   --bg-color: #40407a;
   --heading-color: #818cab;
   --box-shadow-color: #2c2c54;
   --icon-navbar-hover: #706fd348;
-  --bg-item:#706fd348;
-
+  --bg-item: #40407a;
 }
 body {
   margin: 0;

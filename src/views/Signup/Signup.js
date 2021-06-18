@@ -44,6 +44,7 @@ export default function Signup() {
             variant="outlined"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email "
           />
           <input
             required
@@ -53,7 +54,8 @@ export default function Signup() {
             variant="outlined"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />{" "}
+            placeholder="Password "
+          />
           <input
             required
             type="password"
@@ -62,15 +64,19 @@ export default function Signup() {
             variant="outlined"
             value={passwordConfirm}
             onChange={(e) => setPasswordConfirm(e.target.value)}
+            placeholder="confirm password"
           />
-          <button
-            disabled={loading}
-            color="primary"
-            variant="contained"
-            onClick={() => handleSubmit()}
-          >
-            Se connecter
-          </button>
+          <div>
+         
+            <button
+              disabled={loading}
+              color="primary"
+              variant="contained"
+              onClick={() => handleSubmit()}
+            >
+              Se connecter
+            </button>
+          </div>
         </form>
       </div>
     </div>

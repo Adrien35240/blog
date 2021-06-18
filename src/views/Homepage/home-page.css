@@ -1,0 +1,11 @@
+.container-home-page {
+  font-family: var(--font-familly-secondary);
+}
+.container-landing-grid {
+  display: grid;
+  grid-template-columns: 40px auto 40px auto 40px;
+  grid-template-rows: 100px auto 100px ;
+}
+.name {
+  font-size: 80px;
+}

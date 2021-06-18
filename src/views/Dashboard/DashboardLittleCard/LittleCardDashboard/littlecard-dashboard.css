@@ -5,10 +5,8 @@
   margin-top: 1em;
   margin-left: 20px;
   margin-right: 20px;
-  border: 1px solid var(--tertiary-color);
   border-radius: 6px;
   width: 200px;
-  box-shadow: 0 2px 2px -2px var(--box-shadow-color);
   padding: 4px;
   height: auto;
   transition: box-shadow 0.3s;
@@ -127,6 +125,4 @@
 }
 .littlecard-dashboard-publish:hover .tooltip-publish {
   visibility: visible;
-}
-.loading-modal {
 }

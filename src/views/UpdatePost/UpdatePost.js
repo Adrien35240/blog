@@ -40,7 +40,6 @@ function ModifyPost() {
   let urlcourante = document.location.href;
   const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
   let imgLink;
-  const [res, setRes] = useState([]);
   const getArticle = async () => {
     const res = await firebase
       .firestore()
@@ -58,8 +57,8 @@ function ModifyPost() {
   };
 
   useEffect(() => {
-    setRes(getArticle());
-  }, []);
+    getArticle();
+  });
   function handleChange(e) {
     setContent(e);
     console.log(e);

@@ -2,24 +2,29 @@
 import React from "react";
 import TitleNavigationBar from "./icons/TitleNavigationBar";
 import ButtonNavigationBar from "./icons/ButtonNavigationBar";
-import ToggleDarkMode from './toggle-darkMode/ToggleDarkMode'
+import ToggleDarkMode from "./toggle-darkMode/ToggleDarkMode";
 import { useAuth } from "../../../services/security/contexts/AuthContext";
 import ButtonLogOutNavigationBar from "./icons/ButtonLogOutNavigationBar";
-import "./icon-navbar.css"
+import "./icon-navbar.css";
 function IconsNavbar() {
-  const { currentUser} = useAuth();
+  const { currentUser } = useAuth();
 
   return (
     <div className="container-icon-navbar">
       <div>
         <TitleNavigationBar
-          name="Le Blog"
+          name="Home"
           path="/"
           className="container-title-navbar"
         />
       </div>
+ <ToggleDarkMode />
       <div className="container-icon-link">
-        <ToggleDarkMode/>
+        <ButtonNavigationBar
+          name="Blog"
+          path="/blog"
+          className="container-title-navbar"
+        />
         {currentUser ? (
           <ButtonNavigationBar
             color="inherit"
@@ -38,12 +43,13 @@ function IconsNavbar() {
           <ButtonNavigationBar color="inherit" name="LogIn" path="/login" />
         ) : (
           <></> // n'afficher rien si condition = false
-        )}{" "}
-        {!currentUser ? (
+        )}
+        {/* {!currentUser ? (
           <ButtonNavigationBar color="inherit" name="Register" path="/signup" />
         ) : (
           <></> // n'afficher rien si condition = false / modifier le path a /signup pour activer la page d'enregistrement d'utilisateur
-        )}
+        )} */}
+       
       </div>
     </div>
   );

@@ -2,29 +2,28 @@
 import React, { useState, useEffect } from "react";
 import LittleCardDashboard from "./LittleCardDashboard/LittleCardDashboard";
 import firebase from "firebase/app";
-import "./dashboard-littlecard.css"
+import "./dashboard-littlecard.css";
 function DashboardLittleCard(props) {
   const [articles, setArticles] = useState([]);
-  
 
-async function getDocuments() {
-  await firebase
-    .firestore()
-    .collection("articles")
-    .where("userId", "==", props.userId)
-    .get()
-    .then((article) => {
-      let documents = [];
-      article.forEach((doc) => {
-        documents.push({ ...doc.data(), id: doc.id });
+  async function getDocuments() {
+    await firebase
+      .firestore()
+      .collection("articles")
+      .where("userId", "==", props.userId)
+      .get()
+      .then((article) => {
+        let documents = [];
+        article.forEach((doc) => {
+          documents.push({ ...doc.data(), id: doc.id });
+        });
+        setArticles(documents);
       });
-      setArticles(documents);
-    });
-}
+  }
 
   useEffect(() => {
- getDocuments();
-  }, []);
+    getDocuments();
+  });
 
   function renderArticles() {
     return (
