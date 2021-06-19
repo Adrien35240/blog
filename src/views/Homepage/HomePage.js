@@ -8,6 +8,10 @@ import {
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
+  function handleClick() {
+    console.log("click");
+  }
+
   return (
     <div className="container-home-page">
       <section className="container-presentation" id="container-presentation">
@@ -93,11 +97,30 @@ function HomePage() {
         </a>
       </section>
       <section className="container-contact" id="container-contact">
-        {" "}
         <a href="#container-work" id="arrow-secondary">
           <CgArrowUpR />
         </a>
-        Contact
+
+        <form id="form-contact">
+          <div className="form-title">Contact :</div>
+          <div className="form-details">
+            <label forhtml="name">Name </label>
+            <input type="text" id="name" required></input>
+            <label forhtml="email"> Email </label>
+            <input type="email" id="email" required></input>
+          </div>
+          <label forhtml="message">Message</label>
+          <textarea
+            type="text"
+            id="message"
+            rows="10"
+            cols="80"
+            required
+          ></textarea>
+          <div id="button-contact" onClick={() => handleClick()}>
+            Envoyer
+          </div>
+        </form>
       </section>
     </div>
   );
