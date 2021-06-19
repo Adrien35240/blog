@@ -1,12 +1,19 @@
 import React from "react";
+import {
+  CgArrowDownR,
+  CgArrowUpR,
+  CgCodeSlash,
+  CgScreen,
+} from "react-icons/cg";
+import {GoGear} from "react-icons/go"
 import "./home-page.css";
 function HomePage() {
   return (
     <div className="container-home-page">
-      <section className="container-presentation">
+      <section className="container-presentation" id="container-presentation">
         <div className="title">
-          <div>Bonjour, Je suis Adrien</div>
-          <div>Developpeur Web en reconversion</div>
+          <div>Bonjour, Je suis Adrien.</div>
+          <div>Developpeur Web ReactJS.</div>
         </div>
         <div className="description">
           <div>
@@ -16,34 +23,77 @@ function HomePage() {
             passionne depuis l'enfance.
             <br />
             <div>
-              Animer par une motivation sans-faille et l'envie de réussir. J'ai
-              retrouver le goût d'apprendre de nouvelles choses.
+              Animer par une motivation sans-faille et l'envie de réussir ma
+              reconversion. J'ai retrouver le goût d'apprendre de nouvelles
+              choses.
             </div>
           </div>
         </div>
+        <a href="#container-competences" id="arrow">
+          <CgArrowDownR />
+        </a>
       </section>
-      <section className="container-competences">
-        <div className="container-langages">
-          <div className="competences-title">langages</div>
-          <section className="section-resume">
-            <div>Notions : HTML / CSS / Javascript </div>
-          </section>
+      <section className="container-competences" id="container-competences">
+        <a href="#container-presentation" id="arrow-secondary">
+          <CgArrowUpR />
+        </a>
+        <div className="container-tableau-competences">
+          <div className="container-langages">
+            <div className="icon-langages">
+              <CgCodeSlash />
+            </div>
+            <div className="competences-title">langages appreciés</div>
+            <section className="section-resume">
+              <div>
+                <b>Notions :</b> HTML / CSS / Javascript{" "}
+              </div>
+            </section>
+          </div>
+          <div className="container-front-end">
+            <div className="icon-langages">
+              <CgScreen />
+            </div>
+
+            <div className="competences-title">Front-end</div>
+            <section className="section-resume">
+              <div>
+                <b>Notions :</b> ReactJS{" "}
+              </div>
+            </section>
+          </div>
+          <div className="container-back-end">
+            <div className="icon-langages">
+              <GoGear />
+            </div>
+            <div className="competences-title">Back-end</div>
+            <section className="section-resume">
+              <div>
+                <b>Notions :</b> Nodejs / ExpressJS / Firebase / SQL
+                / MongoDB
+              </div>
+            </section>
+          </div>
         </div>
-        <div className="container-front-end">
-          <div className="competences-title">Front-end</div>{" "}
-          <section className="section-resume">
-            <div>Notions : React </div>
-          </section>
-        </div>
-        <div className="container-back-end">
-          <div className="competences-title">Back-end</div>{" "}
-          <section className="section-resume">
-            <div>Notions : Nodejs / ExpressJS / AdonisJS / Firebase / SQL / MongoDB</div>
-          </section>
-        </div>
+        <a href="#container-work" id="arrow-secondary">
+          <CgArrowDownR />
+        </a>
       </section>
-      <section className="container-work">Réalistation</section>
-      <section className="container-contact">Contact</section>
+      <section className="container-work" id="container-work">
+        <a href="#container-competences" id="arrow">
+          <CgArrowUpR />
+        </a>
+        Réalistations
+        <a href="#container-contact" id="arrow">
+          <CgArrowDownR />
+        </a>
+      </section>
+      <section className="container-contact" id="container-contact">
+        {" "}
+        <a href="#container-work" id="arrow-secondary">
+          <CgArrowUpR />
+        </a>
+        Contact
+      </section>
     </div>
   );
 }

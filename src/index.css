@@ -11,7 +11,8 @@
   --box-shadow-color: rgba(0, 0, 0, 0.644);
   --icon-navbar-hover: #cfcfcf48;
   --bg-item: white;
-  --icon-color:#34ace0;
+  --icon-color: #34ace0;
+  --border-competences-color: #22709362;
 }
 
 [data-theme="dark"] {
@@ -26,19 +27,17 @@
   --box-shadow-color: #2c2c54;
   --icon-navbar-hover: #706fd348;
   --bg-item: #40407a;
-  --icon-color:#e1e1ff;
+  --icon-color: #e1e1ff;
+  --border-competences-color: #2c2c5462;
 }
 body {
- 
   height: 100%;
   width: 100%;
   margin: 0;
-
   font-family: var(--font-familly-primary);
   background-color: var(--bg-color);
-  overflow-y: scroll;
 }
-html{
+html {
   scroll-snap-type: y proximity;
-
+  scroll-behavior: smooth;
 }
