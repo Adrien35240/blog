@@ -6,8 +6,8 @@ import "./dashboard-littlecard.css";
 function DashboardLittleCard(props) {
   const [articles, setArticles] = useState([]);
 
-  async function getDocuments() {
-    await firebase
+  useEffect(() => {
+    firebase
       .firestore()
       .collection("articles")
       .where("userId", "==", props.userId)
@@ -19,11 +19,7 @@ function DashboardLittleCard(props) {
         });
         setArticles(documents);
       });
-  }
-
-  useEffect(() => {
-    getDocuments();
-  });
+  }, [props.userId]); //NOTE: a verifier pour la boucle infinie
 
   function renderArticles() {
     return (

@@ -5,7 +5,7 @@ import {
   CgCodeSlash,
   CgScreen,
 } from "react-icons/cg";
-import {GoGear} from "react-icons/go"
+import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
   return (
@@ -42,10 +42,14 @@ function HomePage() {
             <div className="icon-langages">
               <CgCodeSlash />
             </div>
-            <div className="competences-title">langages appreciés</div>
             <section className="section-resume">
               <div>
-                <b>Notions :</b> HTML / CSS / Javascript{" "}
+                <b>Langages appréciés :</b> <br />
+                HTML / CSS / Javascript
+              </div>
+              <div className="competences-title">Environnement :</div>
+              <div>
+                Windows / Linux / Mac / VsCode / GitHub / Trello / Docker
               </div>
             </section>
           </div>
@@ -57,7 +61,8 @@ function HomePage() {
             <div className="competences-title">Front-end</div>
             <section className="section-resume">
               <div>
-                <b>Notions :</b> ReactJS{" "}
+                <b>FrameWork :</b> <br />
+                ReactJS{" "}
               </div>
             </section>
           </div>
@@ -68,8 +73,8 @@ function HomePage() {
             <div className="competences-title">Back-end</div>
             <section className="section-resume">
               <div>
-                <b>Notions :</b> Nodejs / ExpressJS / Firebase / SQL
-                / MongoDB
+                <b>Notions :</b> <br />
+                Nodejs / ExpressJS / Firebase / SQL / MongoDB
               </div>
             </section>
           </div>
@@ -82,7 +87,7 @@ function HomePage() {
         <a href="#container-competences" id="arrow">
           <CgArrowUpR />
         </a>
-        Réalistations
+        Réalisations
         <a href="#container-contact" id="arrow">
           <CgArrowDownR />
         </a>

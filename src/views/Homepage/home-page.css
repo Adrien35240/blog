@@ -23,13 +23,13 @@
   justify-content: center;
   margin-top: 4rem;
   text-indent: 5em;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 .container-competences {
   display: flex;
   flex-direction: column;
-  padding-top: 5vh;
+  padding-top: 3em;
   width: 100vw;
   height: 95vh;
   align-items: center;
@@ -41,7 +41,7 @@
   flex-direction: column;
   width: 100vw;
   height: 95vh;
-  padding-top: 5vh;
+  padding-top: 3em;
   align-items: center;
   justify-content: center;
   scroll-snap-align: center;
