@@ -34,7 +34,6 @@ export default function Login() {
         placeholder="Login"
         type="text"
         required
-        id="email"
         label="Email"
         variant="outlined"
         value={email}
@@ -44,7 +43,6 @@ export default function Login() {
         placeholder="Mot de passe"
         type="password"
         required
-        id="password"
         label="Password"
         variant="outlined"
         value={password}

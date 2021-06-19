@@ -126,7 +126,7 @@ export default function Dashboard() {
       />
       <label htmlFor="file-post">Choisir une image de présentation</label>
       <input required id="file-post" type="file" onChange={handleImageAsFile} />
-      <ReactQuill value={content} onChange={handleChange} modules={modules} />
+      <ReactQuill id="container-quill-editor" value={content} onChange={handleChange} modules={modules} />
       <div className="button-create" onClick={() => handleSubmit()}>
         Créer
       </div>

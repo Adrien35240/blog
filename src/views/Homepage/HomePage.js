@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import {
   CgArrowDownR,
   CgArrowUpR,
@@ -8,10 +9,12 @@ import {
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   function handleClick() {
-    console.log("click");
   }
-
+ 
   return (
     <div className="container-home-page">
       <section className="container-presentation" id="container-presentation">
@@ -105,9 +108,21 @@ function HomePage() {
           <div className="form-title">Contact :</div>
           <div className="form-details">
             <label forhtml="name">Name </label>
-            <input type="text" id="name" required></input>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            ></input>
             <label forhtml="email"> Email </label>
-            <input type="email" id="email" required></input>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            ></input>
           </div>
           <label forhtml="message">Message</label>
           <textarea
@@ -115,6 +130,8 @@ function HomePage() {
             id="message"
             rows="10"
             cols="80"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
           <div id="button-contact" onClick={() => handleClick()}>
