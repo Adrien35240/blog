@@ -16,6 +16,7 @@
   font-size: 1em;
   outline: none;
   transition: border 0.3s;
+  color:var(--font-color)
 }
 .container-update-post input:hover {
   border: 2px solid #34ace0;
@@ -67,4 +68,8 @@
 .ql-editor {
   min-height: 375px;
   width: 100%;
+}
+#container-quill-editor{
+  background-color: white;
+  color:black
 }

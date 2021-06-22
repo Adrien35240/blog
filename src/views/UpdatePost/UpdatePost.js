@@ -31,7 +31,7 @@ function ModifyPost() {
   };
 
   const [description, setDescription] = useState("");
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState('');
   const { currentUser } = useAuth();
   const history = useHistory();
   const [imageAsFile, setImageAsFile] = useState("");
@@ -58,11 +58,8 @@ function ModifyPost() {
 
   useEffect(() => {
     getArticle();
-  });
-  function handleChange(e) {
-    setContent(e);
-    console.log(e);
-  }
+  },[]);
+
 
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
@@ -122,7 +119,7 @@ function ModifyPost() {
       />
       <label htmlFor="file-post">Changer l'image de présentation ?</label>
       <input id="file-post" type="file" onChange={handleImageAsFile} />
-      <ReactQuill value={content} onChange={handleChange} modules={modules} />
+      <ReactQuill id="container-quill-editor" value={content} onChange={(e) => setContent(e)} modules={modules} />
       <div className="button-update" onClick={() => handleSubmit()}>
         Enregistrer
       </div>
