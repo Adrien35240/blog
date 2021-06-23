@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { init } from "emailjs-com";
 import emailjs from "emailjs-com";
-import CV from "../../../public/assets/Ribault-Adrien-CV.pdf";
-import Memoji from "../../../public/assets/images/D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg";
+import CV from "./Ribault-Adrien-CV.pdf";
+import Memoji from "./D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg";
 import {
   CgArrowDownR,
   CgArrowUpR,
