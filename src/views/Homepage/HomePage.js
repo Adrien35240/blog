@@ -47,7 +47,10 @@ function HomePage() {
       <section className="container-presentation" id="container-presentation">
         <div className="title">
           <div id="memoji">
-            <img src={require('./D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg')} alt="memoji"></img>
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg`}
+              alt="memoji"
+            ></img>
           </div>
           <div>Bonjour, Je suis Adrien.</div>
           <div>Developpeur Web ReactJS.</div>
