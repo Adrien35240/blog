@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { init } from "emailjs-com";
+import emailjs from "emailjs-com";
+import CV from "./Ribault-Adrien-CV.pdf";
+import Memoji from "./D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg";
 import {
   CgArrowDownR,
   CgArrowUpR,
@@ -9,16 +12,43 @@ import {
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
+  init("user_BBzkjhkdtbK7YRIDepEkk");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  function handleClick() {
+  const [transmission, setTransmission] = useState(false);
+  useEffect(() => {
+    console.log(useEffect);
+  }, [transmission]);
+  function handleSubmit() {
+    var templateParams = {
+      name,
+      email,
+      message,
+    };
+    console.log(name);
+    console.log(message);
+    emailjs.send("service_esm769a", "template_1zfdb5a", templateParams).then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        if (response.status === 200) {
+          console.log("setTransmission ok");
+          setTransmission(true);
+        }
+      },
+      function (error) {
+        console.log("FAILED...", error);
+      }
+    );
   }
- 
+
   return (
     <div className="container-home-page">
       <section className="container-presentation" id="container-presentation">
         <div className="title">
+          <div id="memoji">
+            <img src={Memoji} alt="memoji"></img>
+          </div>
           <div>Bonjour, Je suis Adrien.</div>
           <div>Developpeur Web ReactJS.</div>
         </div>
@@ -36,6 +66,9 @@ function HomePage() {
             </div>
           </div>
         </div>
+        <a href={CV} download id="link-to-cv">
+          Télécharger mon CV
+        </a>
         <a href="#container-competences" id="arrow">
           <CgArrowDownR />
         </a>
@@ -134,9 +167,15 @@ function HomePage() {
             onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
-          <div id="button-contact" onClick={() => handleClick()}>
-            Envoyer
-          </div>
+          {transmission ? (
+            <a href="#container-presentation" id="transmission">
+              Message Envoyer
+            </a>
+          ) : (
+            <div id="button-contact" onClick={handleSubmit}>
+              Envoyer
+            </div>
+          )}
         </form>
       </section>
     </div>
