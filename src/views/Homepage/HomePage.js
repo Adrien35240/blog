@@ -11,24 +11,12 @@ import {
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
-  init(process.env.EMAILJS_ID);
+  init("user_BBzkjhkdtbK7YRIDepEkk");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [transmission, setTransmission] = useState(false);
   useEffect(() => { }, [transmission]);
-  
-//NOTE: a supprimer
-  // const crypto = require("crypto-js");
-
-  // function getSignatureKey(key, dateStamp, regionName, serviceName) {
-  //   const kDate = crypto.HmacSHA256(dateStamp, "AWS4" + key);
-  //   const kRegion = crypto.HmacSHA256(regionName, kDate);
-  //   const kService = crypto.HmacSHA256(serviceName, kRegion);
-  //   const kSigning = crypto.HmacSHA256("aws4_request", kService);
-  //   return kSigning;
-  // }
-
 
   function handleSubmit() {
     var templateParams = {
@@ -77,7 +65,7 @@ function HomePage() {
           </div>
         </div>
         <a
-          href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
+          href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf?"
           download="cv.pdf"
           className="cv"
         >
