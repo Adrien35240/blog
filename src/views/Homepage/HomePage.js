@@ -16,17 +16,18 @@ function HomePage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [transmission, setTransmission] = useState(false);
-  useEffect(() => {}, [transmission]);
+  useEffect(() => { }, [transmission]);
+  
+//NOTE: a supprimer
+  // const crypto = require("crypto-js");
 
-  const crypto = require("crypto-js");
-
-  function getSignatureKey(key, dateStamp, regionName, serviceName) {
-    const kDate = crypto.HmacSHA256(dateStamp, "AWS4" + key);
-    const kRegion = crypto.HmacSHA256(regionName, kDate);
-    const kService = crypto.HmacSHA256(serviceName, kRegion);
-    const kSigning = crypto.HmacSHA256("aws4_request", kService);
-    return kSigning;
-  }
+  // function getSignatureKey(key, dateStamp, regionName, serviceName) {
+  //   const kDate = crypto.HmacSHA256(dateStamp, "AWS4" + key);
+  //   const kRegion = crypto.HmacSHA256(regionName, kDate);
+  //   const kService = crypto.HmacSHA256(serviceName, kRegion);
+  //   const kSigning = crypto.HmacSHA256("aws4_request", kService);
+  //   return kSigning;
+  // }
 
 
   function handleSubmit() {
