@@ -225,6 +225,7 @@
 }
 #memoji {
   width: 30%;
+  height: auto;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }

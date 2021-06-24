@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { init } from "emailjs-com";
 import emailjs from "emailjs-com";
-import cv from "./cv.pdf";
 import memoji from "./memoji.svg";
 import {
   CgArrowDownR,
@@ -17,15 +16,7 @@ function HomePage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [transmission, setTransmission] = useState(false);
-  useEffect(() => {
-  }, [transmission]);
-
-  function handleCV() {
-  Storage.get("./cv.pdf", { expires: 60 })
-    .then((result) => console.log(result))
-    .catch((err) => console.log(err));
-}
-
+  useEffect(() => {}, [transmission]);
 
   function handleSubmit() {
     var templateParams = {
@@ -73,12 +64,13 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div onClick={handleCV}>
-CV
-        </div>
-         <a href={cv} download className="cv">
+        <a
+          href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
+          download
+          className="cv"
+        >
           Télécharger mon CV
-        </a> 
+        </a>
         <a href="#container-competences" id="arrow">
           <CgArrowDownR />
         </a>
