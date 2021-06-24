@@ -18,8 +18,15 @@ function HomePage() {
   const [message, setMessage] = useState("");
   const [transmission, setTransmission] = useState(false);
   useEffect(() => {
-    console.log("Public_URL : ", process.env.PUBLIC_URL);
   }, [transmission]);
+
+  function handleCV() {
+  Storage.get("./cv.pdf", { expires: 60 })
+    .then((result) => console.log(result))
+    .catch((err) => console.log(err));
+}
+
+
   function handleSubmit() {
     var templateParams = {
       name,
@@ -66,7 +73,10 @@ function HomePage() {
             </div>
           </div>
         </div>
-         <a href={cv} download id="link-to-cv">
+        <div onClick={handleCV}>
+CV
+        </div>
+         <a href={cv} download className="cv">
           Télécharger mon CV
         </a> 
         <a href="#container-competences" id="arrow">

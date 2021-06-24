@@ -205,7 +205,7 @@
   transition: background-color 0.4s;
   color: var(--icon-color);
 }
-#link-to-cv {
+.cv {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,7 +220,7 @@
   text-decoration: none;
   color: var(--font-color);
 }
-#link-to-cv:hover {
+.cv:hover {
   background-color: #33d9b2;
 }
 #memoji {

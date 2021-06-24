@@ -6,5 +6,5 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-  module: { rules: [{ test: /\.(png|jpe?g|gif)$/i, loader: "file-loader" }] },
+  module: { rules: [{ test: /\.(png|jpe?g|gif|pdf)$/i, loader: "file-loader" }] },
 };
