@@ -49,6 +49,7 @@ function HomePage() {
           </div>
           <div>Bonjour, Je suis Adrien.</div>
           <div>Developpeur Web ReactJS.</div>
+          
         </div>
         <div className="description">
           <div>
@@ -65,7 +66,7 @@ function HomePage() {
           </div>
         </div>
         <a
-          href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf?"
+          href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
           download="cv.pdf"
           className="cv"
         >
