@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { init } from "emailjs-com";
 import emailjs from "emailjs-com";
 import cv from "./cv.pdf";
-import memoji from "./memoji.jpeg";
+import memoji from "./memoji.svg";
 import {
   CgArrowDownR,
   CgArrowUpR,
