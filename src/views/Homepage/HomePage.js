@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { init } from "emailjs-com";
 import emailjs from "emailjs-com";
-import CV from "./Ribault-Adrien-CV.pdf";
-import Memoji from "./D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg";
+// import CV from "../../../public/images/Ribault-Adrien-CV.pdf";
+// import Memoji from "./D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg";
 import {
   CgArrowDownR,
   CgArrowUpR,
@@ -18,7 +18,7 @@ function HomePage() {
   const [message, setMessage] = useState("");
   const [transmission, setTransmission] = useState(false);
   useEffect(() => {
-    console.log(useEffect);
+    console.log("Public_URL : ",process.env.PUBLIC_URL);
   }, [transmission]);
   function handleSubmit() {
     var templateParams = {
@@ -48,7 +48,10 @@ function HomePage() {
         <div className="title">
           <div id="memoji">
             <img
-              src={Memoji}
+              src={
+                process.env.PUBLIC_URL +
+                "/images/D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg"
+              }
               alt="memoji"
             ></img>
           </div>
@@ -69,9 +72,9 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <a href={CV} download id="link-to-cv">
+        {/* <a href={CV} download id="link-to-cv">
           Télécharger mon CV
-        </a>
+        </a> */}
         <a href="#container-competences" id="arrow">
           <CgArrowDownR />
         </a>
