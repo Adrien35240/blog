@@ -65,11 +65,9 @@ function HomePage() {
           </div>
         </div>
         <a
-          href="https://cv-acces-141115429158.s3-accesspoint.eu-west-3.amazonaws.com/cv.pdf?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjED8aCWV1LXdlc3QtMyJGMEQCIBTBznASnDpmD5UDaunIf2X1BoOAKp7Ud7E5adERRPirAiB4qDpOJdPFocFRHRr3LHSbDPrt0XwNnerRgLeRki12cir2AggYEAAaDDE0MTExNTQyOTE1OCIMM0oajCFEP8%2BqysjqKtMCLWeQWp5f8vVjCgGPLgvqrz%2FQCuu4dcgsva6jujjLdbpQh%2BxHP4us2VNGF2t8sCouweHa7qEe6BGTTZDLTiU8tDlgCLCeJCGMzpkGAGTGLdoIA8EzyTCh7auEOcVPiTgs7oruvWvrvmkQt0VChz%2Fp2ev%2Bv%2FZYyS4ol2f5x74GW%2F7VmgAFDq7Twh3%2Bi0MZgvQlTBw87Lva6pgDm2Y8KDLY2QvMKzZojpcee7kOYkODZNTIBfzex2kw77b%2BzwTOrWQeGpOfMoOK65xZaclGD8YxAhI90677wPY3HCHdG%2Buay0A%2BzsdjeIUSBbaKYSK9dfLS4YdPu6TnfiK0DQDYblpnRYIFuE7CqwX58WOd%2Bwoq%2BZF%2F9l22c45d%2B72qfSCuf8%2BFmggth3IqOfdo1oaieB2zGYImJu0PCIuurUgRH4WzstSHsjKgz8c%2BnrqlkYwcVke04TBtMKGL0YYGOrQCAFDkNRF8K2ur1XJLmyJV0B1frQlahksp0FKV30%2B5x7SUPS%2BmztQPawbQ%2Fy3F7GXhCV%2FUjxVPBa0qAbM8ES5dIu0glFIJBRqjoISzw6ZqlrFES0kZm7dBLe9LCYrTQmlNf%2FdwzsCUuGvJehgh5QVYTPULJzlY2%2FOeO7Ow02tFrjbqrV8dXat%2FlWm3oLARCIHQvQXyDBreGtM1Z0P3w9nx1cwIzoU6XtzbW78jYoRCm0GQNQxV7VHaciqDHCIF%2F%2Bj25Px%2BmUG4lEcx52z84sqdBIPb1FOHJVj7OUQ5I5QSwHCENUVfqSENjMDtxL%2Bkazb8AQcu7rN6mvnDXGt9ZmgaFOVa%2BmP6jptjm9blKrv493Jk61XX%2BEVE%2FxYs1FGycRUhD3fgg%2FQV4OvXZjcYmhHfJJL8Ylk%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210624T155017Z&X-Amz-SignedHeaders=host&X-Amz-Expires=299&X-Amz-Credential=ASIASBWZCSETISMLDC7R%2F20210624%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Signature=09d6ec62ff13a268c12f3dfefaf29456c0bfb62032964442dfc714c4cb162271"
+          href="https://cv-acces-141115429158.s3-accesspoint.eu-west-3.amazonaws.com/cv.pdf"
           download
-          className="cv"
-          target="_blank"
-        >
+          className="cv">
           Télécharger mon CV
         </a>
         <a href="#container-competences" id="arrow">
