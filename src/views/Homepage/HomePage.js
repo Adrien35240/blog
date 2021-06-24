@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { init } from "emailjs-com";
 import emailjs from "emailjs-com";
-// import CV from "../../../public/images/Ribault-Adrien-CV.pdf";
-// import Memoji from "./D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg";
+import cv from "./cv.pdf";
+import memoji from "./memoji.jpeg";
 import {
   CgArrowDownR,
   CgArrowUpR,
@@ -18,7 +18,7 @@ function HomePage() {
   const [message, setMessage] = useState("");
   const [transmission, setTransmission] = useState(false);
   useEffect(() => {
-    console.log("Public_URL : ",process.env.PUBLIC_URL);
+    console.log("Public_URL : ", process.env.PUBLIC_URL);
   }, [transmission]);
   function handleSubmit() {
     var templateParams = {
@@ -47,13 +47,7 @@ function HomePage() {
       <section className="container-presentation" id="container-presentation">
         <div className="title">
           <div id="memoji">
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                "/images/D9C973AA-D363-4C53-9359-EABAB881D4A1.jpeg"
-              }
-              alt="memoji"
-            ></img>
+            <img src={memoji} alt="memoji"></img>
           </div>
           <div>Bonjour, Je suis Adrien.</div>
           <div>Developpeur Web ReactJS.</div>
@@ -72,9 +66,9 @@ function HomePage() {
             </div>
           </div>
         </div>
-        {/* <a href={CV} download id="link-to-cv">
+         <a href={cv} download id="link-to-cv">
           Télécharger mon CV
-        </a> */}
+        </a> 
         <a href="#container-competences" id="arrow">
           <CgArrowDownR />
         </a>
