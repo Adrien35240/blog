@@ -77,9 +77,8 @@ function HomePage() {
           </div>
         </div>
         <a
-          // https://iam.amazonaws.com?Action=ListUsers&Version=2010-05-08&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIDEXAMPLE%2F20150830%2Fus-east-1%2Fiam%2Faws4_request&X-Amz-Date=20150830T123600Z&X-Amz-Expires=60&X-Amz-SignedHeaders=content-type%3Bhost&X-Amz-Signature=37ac2f4fde00b0ac9bd9eadeb459b1bbee224158d66e7ae5fcadb70b2d181d02
-          href="https://cv-acces-141115429158.s3-accesspoint.eu-west-3.amazonaws.com/cv.pdf?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEEaCWV1LXdlc3QtMyJHMEUCICV7v0yyQJDOZTYLN5MCOixFfgZQMVcE40bGYf67JoXwAiEA1FyyGEQf4NQUbDC9GDnwVjbAY4cC0lzrduhM2QMcNPUq9gIIGhAAGgwxNDExMTU0MjkxNTgiDHsTT%2Bex91jA51NXfSrTAm92Vn1P1lSJwJivuJwsKf9JrMdEgST0bzmeuvDu2FgV1j7MQKaUHjTCnNj4i8cl5PwzE4Se9rCrsB1lUDa7IWf3Vp%2BuTOQQlV0pN08M9WvZPeV29SetOEIZp5uPXes2xX2RweGy%2F7AvUT4KDFPWJ8yBxJofs0E1VZXqxAzYiMqb7fxZtgFk%2FPIdsfRgO%2F0RuT08vJ1Or5EuqAC4FWw2Iid3XxHfxhmcpnLaLL4vJcgmIqc5G3%2FQHiHqIQ2OIYHrjcznGb6Deh88Lfpzw3Aoxi0Z4b%2B1nRMF9zWtALv1Du5o%2BV1jd%2BFXcjqq6qgJTY%2BaMKIwa%2F9kvzPdO0c5xfHUlcTiU8I85kqiXc5DpSp3DOC92NmfJXM%2B5qusQcoAexl%2BZq6VbtJe7G%2FkXrH1hhcMxyP405gSundPsDtwZgDFPkfcYS39BPpvrhNqAuveBQ7MOzsVtjCT89KGBjqzAny3n62K2b9ymxGawO%2B%2B2dZJq%2FXAa9EPbxqQH7KreKdUCrWjYpKE6%2BFc%2FnPiisVOr9AwmpZvc9G8wtaWkxYd0tElDch2xPu%2FeTNVTPOlcM2EUKEaM5tvXKe3Kw39coYKNWEuTJPkgrTOK4JnrJpmHNK5IoilXJ0dwNO0A8fhWI08%2FclYkOwE9eu7PRKsXB3piKR7AqAXmr%2BkOzjIhMg3X%2FAZqMgdQMts6aLUCdLrhHzjlgN5f5Cm3n8VyPJxsZsmu%2BL6xw%2Fb%2FpIOFckZUtuFbN99KtJ5Ur2m7zY%2B5IwmcG7qFVbptTTEE%2BCsWJ1K9WKGZF2nnD1jfMeI0LKWCFGrM1z2MoPIIz1SC%2Bkybb%2FASdX%2BD4VMlFLpOiI5IhQ5t0GafIN5GZfKWRE%2F3Wvh6%2FavZvhxSgM%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210624T204619Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIASBWZCSETHCK5IMB5%2F20210624%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Signature=19edd12f8acc4cafaf0e716f8eda3d17fcef04448f63ae3e8b41fc87c01de13b"
-          download
+          href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
+          download="cv.pdf"
           className="cv"
         >
           Télécharger mon CV
