@@ -13,7 +13,6 @@
   height: calc(100vh - 3em);
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
 }
 .title {
   display: flex;
@@ -54,7 +53,6 @@
   margin-top: 6em;
   align-items: center;
   background-color: var(--secondary-color);
-  scroll-snap-align: center;
 }
 .container-work {
   display: flex;
@@ -64,7 +62,6 @@
   padding-top: 3em;
   align-items: center;
   justify-content: center;
-  scroll-snap-align: center;
 }
 .container-contact {
   display: flex;
@@ -74,7 +71,6 @@
   padding-top: 3em;
   align-items: center;
   background-color: var(--secondary-color);
-  scroll-snap-align: center;
 }
 .container-langages {
   border: 1px solid var(--secondary-color);

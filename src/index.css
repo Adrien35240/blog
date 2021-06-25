@@ -37,7 +37,4 @@ body {
   font-family: var(--font-familly-primary);
   background-color: var(--bg-color);
 }
-html {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-}
+
