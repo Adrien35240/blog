@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SendMail from "../../services/features/SendMail";
 import memoji from "./memoji.svg";
+import { ImLinkedin, ImGithub } from "react-icons/im";
 import { CgCodeSlash, CgScreen } from "react-icons/cg";
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
@@ -32,6 +33,24 @@ function HomePage() {
             réaliser un livre spécimen de polices de texte.
           </div>
         </div>
+        <div className="container-icon-presentation">
+          <a
+            href="https://www.linkedin.com/in/adrien-ribault-30792019b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="linkedin"
+          >
+            <ImLinkedin />
+          </a>
+          <a
+            href="https://github.com/adrien35240"
+            id="github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ImGithub />
+          </a>
+        </div>{" "}
         <a
           href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
           download="cv.pdf"
@@ -65,7 +84,7 @@ function HomePage() {
             <section className="section-resume">
               <div>
                 <b>FrameWork :</b> <br />
-                ReactJS{" "}
+                ReactJS
               </div>
             </section>
           </div>
