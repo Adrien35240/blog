@@ -4,7 +4,7 @@
   position:fixed;
   background-color: var(--primary-color);
   box-shadow: 0 2px 2px -2px var(--box-shadow-color);
-  width: 100%;
+  width: 100vw;
   height: 3em;
   z-index:1;
 }

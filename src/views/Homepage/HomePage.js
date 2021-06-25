@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SendMail from "../../services/features/SendMail";
 import memoji from "./memoji.svg";
-import {
-  CgArrowDownR,
-  CgArrowUpR,
-  CgCodeSlash,
-  CgScreen,
-} from "react-icons/cg";
+import { CgCodeSlash, CgScreen } from "react-icons/cg";
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
@@ -19,12 +14,14 @@ function HomePage() {
   return (
     <div className="container-home-page">
       <section className="container-presentation" id="container-presentation">
-        <div className="title">
+        <div>
           <div id="memoji">
             <img src={memoji} alt="memoji"></img>
           </div>
-          <div>Bonjour, Je suis Adrien.</div>
-          <div>Developpeur Web ReactJS.</div>
+          <div className="title">
+            <div>Bonjour, Je suis Adrien.</div>
+            <div>Developpeur Web ReactJS.</div>
+          </div>
         </div>
         <div className="description">
           <div>
@@ -47,14 +44,8 @@ function HomePage() {
         >
           Télécharger mon CV
         </a>
-        <a href="#container-competences" id="arrow">
-          <CgArrowDownR />
-        </a>
       </section>
       <section className="container-competences" id="container-competences">
-        <a href="#container-presentation" id="arrow-secondary">
-          <CgArrowUpR />
-        </a>
         <div className="container-tableau-competences">
           <div className="container-langages">
             <div className="icon-langages">
@@ -75,7 +66,6 @@ function HomePage() {
             <div className="icon-langages">
               <CgScreen />
             </div>
-
             <div className="competences-title">Front-end</div>
             <section className="section-resume">
               <div>
@@ -97,45 +87,39 @@ function HomePage() {
             </section>
           </div>
         </div>
-        <a href="#container-work" id="arrow-secondary">
-          <CgArrowDownR />
-        </a>
       </section>
       <section className="container-work" id="container-work">
-        <a href="#container-competences" id="arrow">
-          <CgArrowUpR />
-        </a>
         Réalisations
-        <a href="#container-contact" id="arrow">
-          <CgArrowDownR />
-        </a>
       </section>
       <section className="container-contact" id="container-contact">
-        <a href="#container-work" id="arrow-secondary">
-          <CgArrowUpR />
-        </a>
-
-        <form id="form-contact">
+        <form
+          id="form-contact"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setTransmission(true);
+            SendMail(name, email, message);
+          }}
+        >
           <div className="form-title">Contact :</div>
           <div className="form-details">
-            <label forhtml="name">Name </label>
             <input
               type="text"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder="Name"
               required
             ></input>
-            <label forhtml="email"> Email </label>
+            <br />
             <input
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
               required
             ></input>
           </div>
-          <label forhtml="message">Message</label>
           <textarea
             type="text"
             id="message"
@@ -143,6 +127,7 @@ function HomePage() {
             cols="80"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            placeholder="Message"
             required
           ></textarea>
           {transmission ? (
@@ -150,15 +135,11 @@ function HomePage() {
               Message Envoyer
             </a>
           ) : (
-            <div
-              id="button-contact"
-              onClick={async () => {
-                await SendMail(name, email, message);
-                setTransmission(true);
-              }}
-            >
-              Envoyer
-            </div>
+            <input
+              type="submit"
+              className="button-contact"
+              value="Envoyer"
+            ></input>
           )}
         </form>
       </section>
