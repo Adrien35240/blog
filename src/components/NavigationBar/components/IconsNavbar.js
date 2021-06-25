@@ -20,16 +20,16 @@ function IconsNavbar() {
       </div>
       <ToggleDarkMode />
       <div className="container-liens">
-        <a id="a-portfolio" href="#container-presentation">
+        <a id="a-portfolio" href="/#container-presentation">
           Accueil
         </a>
-        <a id="a-portfolio" href="#container-competences">
+        <a id="a-portfolio" href="/#container-competences">
           Compétences
         </a>
-        <a id="a-portfolio" href="#container-work">
+        <a id="a-portfolio" href="/#container-work">
           Portfolio
         </a>
-        <a id="a-portfolio" href="#container-contact">
+        <a id="a-portfolio" href="/#container-contact">
           Contact
         </a>
       </div>
