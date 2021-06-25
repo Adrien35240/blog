@@ -5,11 +5,11 @@ import { AuthProvider } from "./services/security/contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./views/Dashboard/Dashboard";
 import CreatePost from "./views/CreatePost/CreatePost";
-// import Login from "./views/Login/Login";
+import Login from "./views/Login/Login";
 import PrivateRoute from "./services/security/contexts/PrivateRoute";
 import ForgotPassword from "./views/ForgotPassword/ForgotPassword";
 import UpdateProfil from "./views/UpdateProfil/UpdateProfil";
-// import PostContainer from "./views/PostContainer/PostContainer";
+import PostContainer from "./views/PostContainer/PostContainer";
 import Navbar from "./components/NavigationBar/Navbar";
 import FocusPost from "./views/FocusPost/FocusPost";
 import UpdatePost from "./views/UpdatePost/UpdatePost";
@@ -32,9 +32,9 @@ function App() {
               <Route path="/home-page" component={HomePage} />
               <Route path="/focus-post/:slug" component={FocusPost} />
               <Route path="/signup" component={Signup} />
-              <Route path="/login" component={InProgress} />{/* NOTE: a remplace par Login */}
+              <Route path="/login" component={Login} />{/* NOTE: a remplace par Login */}
               <Route path="/forgot-password" component={ForgotPassword} />
-               <Route path="/blog" component={InProgress} />{/* NOTE: a remplace par PostContainer */}
+               <Route path="/blog" component={PostContainer} />{/* NOTE: a remplace par PostContainer */}
               <Route path="/" component={HomePage} />
             </Switch>
           </div>

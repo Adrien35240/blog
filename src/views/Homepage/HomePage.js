@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { init } from "emailjs-com";
-import emailjs from "emailjs-com";
+import SendMail from "../../services/features/SendMail";
 import memoji from "./memoji.svg";
 import {
   CgArrowDownR,
@@ -11,34 +10,11 @@ import {
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
-  init("user_BBzkjhkdtbK7YRIDepEkk");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [transmission, setTransmission] = useState(false);
-  useEffect(() => { }, [transmission]);
-
-  function handleSubmit() {
-    var templateParams = {
-      name,
-      email,
-      message,
-    };
-    console.log(name);
-    console.log(message);
-    emailjs.send("service_esm769a", "template_1zfdb5a", templateParams).then(
-      function (response) {
-        console.log("SUCCESS!", response.status, response.text);
-        if (response.status === 200) {
-          console.log("setTransmission ok");
-          setTransmission(true);
-        }
-      },
-      function (error) {
-        console.log("FAILED...", error);
-      }
-    );
-  }
+  useEffect(() => {}, [transmission]);
 
   return (
     <div className="container-home-page">
@@ -49,7 +25,6 @@ function HomePage() {
           </div>
           <div>Bonjour, Je suis Adrien.</div>
           <div>Developpeur Web ReactJS.</div>
-          
         </div>
         <div className="description">
           <div>
@@ -175,7 +150,13 @@ function HomePage() {
               Message Envoyer
             </a>
           ) : (
-            <div id="button-contact" onClick={handleSubmit}>
+            <div
+              id="button-contact"
+              onClick={async () => {
+                await SendMail(name, email, message);
+                setTransmission(true);
+              }}
+            >
               Envoyer
             </div>
           )}
