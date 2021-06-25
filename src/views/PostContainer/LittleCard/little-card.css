@@ -42,23 +42,9 @@
 #link-little-card {
   text-decoration: none;
 }
-/* @media screen and (max-width: 1100px) {
-  .description-little-card {
-    font-size: 1.2vw;
+
+@media screen and (max-width: 600px) {
+  .container-little-card {
+    border:1px solid var(--icon-color);
   }
-}
-@media screen and (max-width: 1000px) {
-  .description-little-card {
-    font-size: 1.5vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .description-little-card {
-    font-size: 2vw;
-  }
-}
-@media screen and (max-width: 500px) {
-  .description-little-card {
-    font-size: 3vw;
-  }
-} */
+} 
