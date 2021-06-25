@@ -34,3 +34,8 @@
 #a-portfolio:hover {
   background-color: var(--icon-navbar-hover);
 }
+@media screen and (max-width:600px) {
+  .container-liens{
+    display:none
+  }
+}
