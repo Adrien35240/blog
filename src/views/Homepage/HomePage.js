@@ -25,16 +25,11 @@ function HomePage() {
         </div>
         <div className="description">
           <div>
-            Depuis que j'ai appris que le secteur pour lequel je travaillais
-            depuis plus de 10 ans était en déclin . A 37 ans,j'ai décidé de
-            saisir ma chance et ré-orienter ma carrière dans un domaine qui me
-            passionne depuis l'enfance.
-            <br />
-            <div>
-              Animer par une motivation sans-faille et l'envie de réussir ma
-              reconversion. J'ai retrouver le goût d'apprendre de nouvelles
-              choses.
-            </div>
+            Le Lorem Ipsum est simplement du faux texte employé dans la
+            composition et la mise en page avant impression. Le Lorem Ipsum est
+            le faux texte standard de l'imprimerie depuis les années 1500, quand
+            un imprimeur anonyme assembla ensemble des morceaux de texte pour
+            réaliser un livre spécimen de polices de texte.
           </div>
         </div>
         <a
