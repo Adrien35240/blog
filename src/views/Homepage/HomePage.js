@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SendMail from "../../services/features/SendMail";
 import memoji from "./memoji.svg";
 import { ImLinkedin, ImGithub } from "react-icons/im";
-import { CgCodeSlash, CgScreen, CgSize } from "react-icons/cg";
+import { CgCodeSlash, CgScreen } from "react-icons/cg";
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
@@ -120,7 +120,7 @@ function HomePage() {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Name"
+              placeholder="Nom"
               required
             ></input>
             <br />
