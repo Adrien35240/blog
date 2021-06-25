@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SendMail from "../../services/features/SendMail";
 import memoji from "./memoji.svg";
 import { ImLinkedin, ImGithub } from "react-icons/im";
-import { CgCodeSlash, CgScreen } from "react-icons/cg";
+import { CgCodeSlash, CgScreen, CgSize } from "react-icons/cg";
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
@@ -28,7 +28,7 @@ function HomePage() {
           <div>
             Je suis actuellement en reconversion pour devenir développeur Web, Je vais bientôt commencer une formation Fullstack.
            J'ai réalisé ce site vitrine en React pour exposer mes compétences apprises. Vous y trouverez mon portfolio ainsi qu'un blog que j'ai également réalisé de zéro en React/firebase ou j'écrirais quelques articles techniques.
-          </div>
+          </div><div style={{fontSize:".5em"}}>Modifier le 26/06/21</div>
         </div>
         <div className="container-icon-presentation">
           <a
