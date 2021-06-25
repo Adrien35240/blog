@@ -3,7 +3,7 @@ import './inprogress.css'
 function InProgress() {
     return (
         <div className="container-in-progress">
-            Page en construction
+            Page désactiver
         </div>
     )
 }

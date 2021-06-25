@@ -31,7 +31,7 @@ function App() {
               <Route path="/in-progress" component={InProgress}/>
               <Route path="/home-page" component={HomePage} />
               <Route path="/focus-post/:slug" component={FocusPost} />
-              <Route path="/signup" component={Signup} />
+              <Route path="/signup" component={InProgress} />
               <Route path="/login" component={Login} />{/* NOTE: a remplace par Login */}
               <Route path="/forgot-password" component={ForgotPassword} />
                <Route path="/blog" component={PostContainer} />{/* NOTE: a remplace par PostContainer */}

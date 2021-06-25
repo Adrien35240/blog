@@ -1,4 +1,3 @@
-//TODO: afficher le bouton dashboard pour un utilisateur connecté
 import React from "react";
 import TitleNavigationBar from "./icons/TitleNavigationBar";
 import ButtonNavigationBar from "./icons/ButtonNavigationBar";
@@ -59,7 +58,7 @@ function IconsNavbar() {
           <></> // n'afficher rien si condition = false
         )}
         {!currentUser ? (
-          <ButtonNavigationBar color="inherit" name="Register" path="/signup" />
+          <ButtonNavigationBar color="inherit" name="Register" path="/in-progress" />
         ) : (
           <></> // n'afficher rien si condition = false / modifier le path a /signup pour activer la page d'enregistrement d'utilisateur
         )}
