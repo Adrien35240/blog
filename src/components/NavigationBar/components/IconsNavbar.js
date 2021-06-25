@@ -18,7 +18,21 @@ function IconsNavbar() {
           className="container-title-navbar"
         />
       </div>
- <ToggleDarkMode />
+      <ToggleDarkMode />
+      <div className="container-liens">
+        <a id="a-portfolio" href="#container-presentation">
+          Accueil
+        </a>
+        <a id="a-portfolio" href="#container-competences">
+          Compétences
+        </a>
+        <a id="a-portfolio" href="#container-work">
+          Portfolio
+        </a>
+        <a id="a-portfolio" href="#container-contact">
+          Contact
+        </a>
+      </div>
       <div className="container-icon-link">
         <ButtonNavigationBar
           name="Blog"
@@ -49,7 +63,6 @@ function IconsNavbar() {
         ) : (
           <></> // n'afficher rien si condition = false / modifier le path a /signup pour activer la page d'enregistrement d'utilisateur
         )} */}
-       
       </div>
     </div>
   );

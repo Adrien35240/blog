@@ -186,6 +186,7 @@
 }
 #message {
   border-radius: 10px;
+  resize: none;
   padding: 8px;
   width: 60vw;
   outline: none;

@@ -26,11 +26,8 @@ function HomePage() {
         </div>
         <div className="description">
           <div>
-            Le Lorem Ipsum est simplement du faux texte employé dans la
-            composition et la mise en page avant impression. Le Lorem Ipsum est
-            le faux texte standard de l'imprimerie depuis les années 1500, quand
-            un imprimeur anonyme assembla ensemble des morceaux de texte pour
-            réaliser un livre spécimen de polices de texte.
+            Je suis actuellement en reconversion pour devenir développeur Web, Je vais bientôt commencer une formation Fullstack.
+           J'ai réalisé ce site vitrine en React pour exposer mes compétences apprises. Vous y trouverez mon portfolio ainsi qu'un blog que j'ai également réalisé de zéro en React/firebase ou j'écrirais quelques articles techniques.
           </div>
         </div>
         <div className="container-icon-presentation">
@@ -73,7 +70,9 @@ function HomePage() {
               <div className="competences-title">Environnement :</div>
               <div>
                 Windows / Linux / Mac / VsCode / GitHub / Trello / Docker
-              </div>
+              </div>{" "}
+              <div className="competences-title">Notions :</div>
+              <div>AWS S3 & Amplify</div>
             </section>
           </div>
           <div className="container-front-end">
@@ -142,6 +141,7 @@ function HomePage() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Message"
+            
             required
           ></textarea>
           {transmission ? (
