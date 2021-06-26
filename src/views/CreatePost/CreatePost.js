@@ -9,10 +9,14 @@ import "react-quill/dist/quill.snow.css";
 import "./create-post.css";
 import imageCompression from "browser-image-compression";
 import ImageCompress from "quill-image-compress";
-
+ import hljs from "highlight.js";
 
 
 export default function Dashboard() {
+   hljs.configure({
+     useBR: false,
+     languages: ["javascript", "java", "html", "xml", "sql", "typescript"],
+   });
   Quill.register("modules/imageCompress", ImageCompress);
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
@@ -20,6 +24,7 @@ export default function Dashboard() {
   const history = useHistory();
   const [imgLink, setImgLink] = useState("");
   const modules = {
+     syntax:true,
     toolbar: [
       [{ header: "1" }, { header: "2" }, { font: [] }],
       [{ size: [] }],

@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import BigCard from "./BigCard/Bigcard";
 import firebase from "firebase/app";
+import hljs from "highlight.js";
 import "./focus-post.css";
 function FocusPost() {
-  const [articles, setArticles] = useState([]);
+  hljs.configure({
+    useBR: false,
+    languages: ["javascript", "java", "html", "xml", "sql", "typescript"],
+  });
 
+  const [articles, setArticles] = useState([]);
   function getArticleFocused() {
     let urlcourante = document.location.href;
     const queue_url = urlcourante.substring(urlcourante.lastIndexOf("/") + 1);
-    console.log(queue_url);
+    console.log("queue", queue_url);
+
     firebase
       .firestore()
       .collection("articles")
@@ -30,17 +36,18 @@ function FocusPost() {
   return (
     <div className="container-focus-article">
       {articles &&
-        articles.map((article, index) => (
-          <div key={index}>
-            <BigCard
-              title={article.title}
-              content={article.content}
-              img={article.img}
-              slug={article.title}
-              id={article.id}
-            />
-          </div>
-        ))}
+        articles.map((article, index) =>
+            <div key={index}>
+              <BigCard
+                title={article.title}
+                content={article.content}
+                img={article.img}
+                slug={article.title}
+                id={article.id}
+              />
+            </div>
+          )
+        }
     </div>
   );
 }

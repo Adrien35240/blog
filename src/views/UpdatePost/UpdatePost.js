@@ -7,9 +7,14 @@ import { storage } from "../../services/database/firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./update-post.css";
-
+import hljs from "highlight.js";
 function ModifyPost() {
+   hljs.configure({
+      useBR: false,
+     languages: ["javascript", "java", "html", "xml", "sql", "typescript"],
+    });
   const modules = {
+     syntax:true,
     toolbar: [
       [{ header: "1" }, { header: "2" }, { font: [] }],
       [{ size: [] }],
