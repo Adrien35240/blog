@@ -31,7 +31,7 @@ export default function Dashboard() {
         { indent: "-1" },
         { indent: "+1" },
       ],
-      ["link", "image", "video"],
+      ["link", "image", "video","code-block"],
       ["clean"],
     ],
     clipboard: {
