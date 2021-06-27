@@ -1,4 +1,4 @@
-:root {
+:root{
   --font-familly-primary: Source Sans Pro, sans-serif;
   --font-familly-secondary: "Nova Mono", monospace;
   --primary-color: white;
@@ -13,6 +13,25 @@
   --bg-item: white;
   --icon-color: #34ace0;
   --border-competences-color: #22709362;
+  --big-card-content: white;
+
+}
+[data-theme="light"]{
+  --font-familly-primary: Source Sans Pro, sans-serif;
+  --font-familly-secondary: "Nova Mono", monospace;
+  --primary-color: white;
+  --secondary-color: #34ace0;
+  --tertiary-color: #84817a;
+  --alert-color: #ff5252;
+  --font-color: #424242;
+  --bg-color: white;
+  --heading-color: #292922;
+  --box-shadow-color: rgba(0, 0, 0, 0.644);
+  --icon-navbar-hover: #cfcfcf48;
+  --bg-item: white;
+  --icon-color: #34ace0;
+  --border-competences-color: #22709362;
+  --big-card-content: #84817a48;
 }
 
 [data-theme="dark"] {
@@ -29,6 +48,7 @@
   --bg-item: #40407a;
   --icon-color: #e1e1ff;
   --border-competences-color: #2c2c5462;
+  --big-card-content: #474787;
 }
 body {
   height: 100%;

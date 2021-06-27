@@ -40,9 +40,18 @@
   margin-right: 1em;
   color: var(--icon-color);
   text-decoration: none;
-}#github {
+  transition: transform 0.2s ease-out;
+}
+#github {
   color: var(--icon-color);
   text-decoration: none;
+  transition: transform 0.2s;
+}
+#linkedin:hover {
+  transform: scale(1.1);
+}
+#github:hover {
+  transform: scale(1.1);
 }
 
 .container-competences {

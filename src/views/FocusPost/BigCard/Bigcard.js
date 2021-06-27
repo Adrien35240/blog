@@ -7,7 +7,7 @@ export default function BigCard(props) {
     let text = props.content;
 
     return (
-      <div component={"span"} dangerouslySetInnerHTML={{ __html: text }}></div>
+      <div id="big-card-content" component={"span"} dangerouslySetInnerHTML={{ __html: text }}></div>
     );
   }
   return (

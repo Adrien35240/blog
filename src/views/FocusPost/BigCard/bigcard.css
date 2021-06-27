@@ -6,7 +6,7 @@
   margin-top: 2em;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1000px;
+  width: 60vw;
   height: auto;
   color:var(--font-color)
 }
@@ -25,6 +25,22 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+#big-card-content{
+  background-color: var(--big-card-content);
+  border: 1px solid var(--icon-color);
+  padding:6px;
+  border-radius: 6px;
+  width: 60vw;
+  word-wrap: break-word;
+}
+@media screen and (max-width:600px) {
+  #big-card-content{
+  width: 94vw;
+  }
+.container-big-card {
+  width: 94vw;
+}
 }
 
 img{
