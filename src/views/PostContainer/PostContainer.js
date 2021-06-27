@@ -31,7 +31,7 @@ function PostContainer() {
           {articles &&
             articles.map((article, index) => {
               return (
-                <div key={index}>
+                <div key={index} className="card-article">
                   {article.publish ? (
                     <LittleCard
                       title={article.title}

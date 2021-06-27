@@ -46,5 +46,13 @@
 @media screen and (max-width: 600px) {
   .container-little-card {
     border:1px solid var(--icon-color);
+    width: 94vw;
+    margin: 0;
+    height: auto;
+    padding-bottom: 1em;
+  }
+  .container-img-little-card {
+    width: 100vw;
+    height: auto;
   }
 } 

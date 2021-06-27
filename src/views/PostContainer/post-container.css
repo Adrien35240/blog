@@ -5,14 +5,14 @@ body{
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
-
+  width: 100vw;
 }
 .container-articles {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 6px;
-  max-width: 1000px;
+  max-width: 80vw;
   margin-right: auto;
   margin-left: auto;
   margin-top: 1.5em;
@@ -31,4 +31,12 @@ body{
   height: auto;
   justify-content: center;
   border: 1px solid red;
+}
+@media screen and (max-width:600px) {
+  .container-articles{
+    width: 100vw;
+  }
+  .card-article{
+    width: 100vw;
+  }
 }
