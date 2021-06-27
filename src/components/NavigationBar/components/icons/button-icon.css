@@ -44,3 +44,10 @@
   background-color: var(--icon-navbar-hover);
 
 }
+@media screen and (max-width:600px) {
+  #id-icon-link{
+    width:auto;
+    margin-right: 4px;
+  }
+  
+}
