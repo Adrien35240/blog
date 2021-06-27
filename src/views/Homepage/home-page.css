@@ -65,12 +65,13 @@
   transform: scale(1.1);
 }
 .cv {
-   color: var(--icon-color);
+  color: var(--icon-color);
+  scale: 1.2;
   text-decoration: none;
   transition: transform 0.2s;
 }
 .cv:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .container-competences {
@@ -203,7 +204,7 @@
 }
 .button-contact {
   text-align: center;
-  width: 20vw;
+  width: auto;
   border-radius: 10px;
   background-color: var(--primary-color);
   margin-top: 2em;
@@ -231,15 +232,13 @@
   color: var(--icon-color);
 }
 
-
-
 @media screen and (max-width: 600px) {
   .container-home-page {
     font-size: 4vw;
     width: 100vw;
     margin-top: 2em;
   }
- 
+
   .title {
     font-size: 4vw;
   }

@@ -2,7 +2,9 @@ import React from "react";
 import ButtonNavigationBar from "./icons/ButtonNavigationBar";
 import ToggleDarkMode from "./toggle-darkMode/ToggleDarkMode";
 import { useAuth } from "../../../services/security/contexts/AuthContext";
-import { FaHome,FaBlog } from "react-icons/fa";
+import { FaHome, FaBlog } from "react-icons/fa";
+import { CgLogIn } from "react-icons/cg"
+import { MdDashboard } from "react-icons/md";
 import ButtonLogOutNavigationBar from "./icons/ButtonLogOutNavigationBar";
 import "./icon-navbar.css";
 function IconsNavbar() {
@@ -10,10 +12,7 @@ function IconsNavbar() {
 
   return (
     <div className="container-icon-navbar">
-      <a
-        className="icon-home"
-        href="/#container-presentation"
-      >
+      <a className="icon-home" href="/#container-presentation">
         <FaHome />
       </a>
       <ToggleDarkMode />
@@ -66,10 +65,29 @@ function IconsNavbar() {
           <></> // n'afficher rien si condition = false / modifier le path a /signup pour activer la page d'enregistrement d'utilisateur
         )}
       </div>
-      <div >
-        <a className="icon-blog" href="/blog">
+      <div id="container-icon-responsive">
+        <a id="icon-blog" href="/blog">
           <FaBlog />
         </a>
+        {!currentUser ? (
+          <a id="icon-login" href="/login">
+            <CgLogIn />
+          </a>
+        ) : (
+          <></>
+        )}
+        {currentUser ? (
+          <a id="icon-dashboard" href="/dashboard">
+            <MdDashboard />
+          </a>
+        ) : (
+          <></>
+        )}
+        {currentUser ? (
+          <ButtonLogOutNavigationBar name="LogOut" color="inherit" />
+        ) : (
+          <></> // n'afficher rien si condition = false
+        )}
       </div>
     </div>
   );

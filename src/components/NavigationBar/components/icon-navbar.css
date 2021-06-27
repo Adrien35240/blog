@@ -61,6 +61,38 @@
   height: 3em;
   scale: 1.2;
 }
+#container-icon-responsive {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+#icon-blog {
+  display: flex;
+  color: var(--icon-color);
+  width: 2em;
+  margin-left: 2em;
+  margin-right: 1em;
+  transition: background-color 0.3s;
+  scale: 1.2;
+}
+#icon-login {
+  display: flex;
+  color: var(--icon-color);
+  width: 2em;
+  margin-right: 1em;
+  transition: background-color 0.3s;
+  scale: 1.6;
+}
+#icon-dashboard{
+    display: flex;
+  color: var(--icon-color);
+  width: 2em;
+  margin-right: 1em;
+  transition: background-color 0.3s;
+  scale: 1.6;
+}
 
 @media screen and (max-width: 600px) {
   .container-liens {
@@ -69,7 +101,7 @@
   .container-icon-link {
     display: none;
   }
-  .icon-blog {
+  #container-icon-responsive {
     display: flex;
   }
   .icon-home {
