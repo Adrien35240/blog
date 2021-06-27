@@ -34,7 +34,7 @@
   width: 60vw;
   word-wrap: break-word;
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
   #big-card-content{
   width: 94vw;
   }

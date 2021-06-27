@@ -232,7 +232,7 @@
   color: var(--icon-color);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .container-home-page {
     font-size: 4vw;
     width: 100vw;
