@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-indent: 5em;
   margin-bottom: 3rem;
 }
@@ -33,7 +33,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 1em;
   font-size: 3em;
   color: var(--icon-color);
 }
@@ -44,6 +43,7 @@
   transition: transform 0.2s ease-out;
 }
 #github {
+  margin-right: 1em;
   color: var(--icon-color);
   text-decoration: none;
   transition: transform 0.2s;
@@ -53,6 +53,14 @@
 }
 #github:hover {
   transform: scale(1.1);
+}
+.cv {
+   color: var(--icon-color);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.cv:hover {
+    transform: scale(1.1);
 }
 
 .container-competences {
@@ -230,26 +238,8 @@
   height: 2em;
   color: var(--icon-color);
 }
-.cv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30vw;
-  border-radius: 10px;
-  padding: 4px;
-  background-color: var(--primary-color);
-  margin-bottom: 2em;
-  border: 4px solid var(--icon-color);
-  height: 2em;
-  transition: background-color 0.4s;
-  text-decoration: none;
-  color: var(--font-color);
-}
-.cv:hover {
-  background-color: #33d9b2;
-}
+
 #memoji {
-  margin-top: 6em;
   width: 30%;
   height: auto;
   -webkit-transition: all 0.5s ease;

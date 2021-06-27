@@ -3,6 +3,7 @@ import SendMail from "../../services/features/SendMail";
 import memoji from "./memoji.svg";
 import { ImLinkedin, ImGithub } from "react-icons/im";
 import { CgCodeSlash, CgScreen } from "react-icons/cg";
+import {FaAddressCard} from "react-icons/fa"
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
 function HomePage() {
@@ -26,9 +27,10 @@ function HomePage() {
         </div>
         <div className="description">
           <div>
-            Développeur passionné dans le domaine du web. J'ai réalisé ce site vitrine en React pour
-            exposer mes compétences apprises en auto-didacte. Vous y trouverez mon portfolio
-            ainsi qu'un blog réalisé avec ReactJs et Firebase.
+            Développeur passionné dans le domaine du web. J'ai réalisé ce site
+            vitrine en React pour exposer mes compétences apprises en
+            auto-didacte. Vous y trouverez mon portfolio ainsi qu'un blog
+            réalisé avec ReactJs et Firebase.
           </div>
         </div>
         <div className="container-icon-presentation">
@@ -48,14 +50,21 @@ function HomePage() {
           >
             <ImGithub />
           </a>
-        </div>{" "}
-        <a
+          <a
+            href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
+            download="cv.pdf"
+            className="cv"
+          >
+            <FaAddressCard />
+          </a>
+        </div>
+        {/* <a
           href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
           download="cv.pdf"
           className="cv"
         >
           Télécharger mon CV
-        </a>
+        </a> */}
       </section>
       <section className="container-competences" id="container-competences">
         <div className="container-tableau-competences">
