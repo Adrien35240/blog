@@ -26,8 +26,12 @@ function HomePage() {
         </div>
         <div className="description">
           <div>
-            Je suis actuellement en reconversion pour devenir développeur Web, Je vais bientôt commencer une formation Fullstack.
-           J'ai réalisé ce site vitrine en React pour exposer mes compétences apprises. Vous y trouverez mon portfolio ainsi qu'un blog que j'ai également réalisé de zéro en React/firebase ou j'écrirais quelques articles techniques.
+            Je suis actuellement en reconversion pour devenir développeur Web,
+            Je vais bientôt commencer une formation Fullstack. J'ai réalisé ce
+            site vitrine en React pour exposer mes compétences apprises. Vous y
+            trouverez mon portfolio ainsi qu'un blog que j'ai également réalisé
+            de zéro en React/firebase ou j'écrirais quelques articles
+            techniques.
           </div>
         </div>
         <div className="container-icon-presentation">
@@ -85,6 +89,11 @@ function HomePage() {
                 <b>FrameWork :</b> <br />
                 ReactJS
               </div>
+              <br />
+              <div>
+                <b>Testing :</b> <br />
+                Jest
+              </div>
             </section>
           </div>
           <div className="container-back-end">
@@ -141,7 +150,6 @@ function HomePage() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Message"
-            
             required
           ></textarea>
           {transmission ? (
