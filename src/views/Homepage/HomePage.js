@@ -26,12 +26,9 @@ function HomePage() {
         </div>
         <div className="description">
           <div>
-            Je suis actuellement en reconversion pour devenir développeur Web,
-            Je vais bientôt commencer une formation Fullstack. J'ai réalisé ce
-            site vitrine en React pour exposer mes compétences apprises. Vous y
-            trouverez mon portfolio ainsi qu'un blog que j'ai également réalisé
-            de zéro en React/firebase ou j'écrirais quelques articles
-            techniques.
+            Développeur passionné dans le domaine du web. J'ai réalisé ce site vitrine en React pour
+            exposer mes compétences apprises en auto-didacte. Vous y trouverez mon portfolio
+            ainsi qu'un blog réalisé avec ReactJs et Firebase.
           </div>
         </div>
         <div className="container-icon-presentation">
@@ -138,7 +135,7 @@ function HomePage() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
+              placeholder="Adresse e-mail"
               required
             ></input>
           </div>
@@ -149,7 +146,7 @@ function HomePage() {
             cols="80"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Message"
+            placeholder="Votre message"
             required
           ></textarea>
           {transmission ? (
@@ -160,7 +157,7 @@ function HomePage() {
             <input
               type="submit"
               className="button-contact"
-              value="Envoyer"
+              value="ME CONTACTER"
             ></input>
           )}
         </form>

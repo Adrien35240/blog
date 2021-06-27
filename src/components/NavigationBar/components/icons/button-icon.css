@@ -18,18 +18,8 @@
 #id-icon-link:hover {
   background-color: var(--icon-navbar-hover);
 }
-#id-icon-home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  color: var(--icon-color);
-  width: 4em;
-  transition: background-color 0.3s;
-}
-#id-icon-home:hover {
-  background-color:var(--icon-navbar-hover);
-}
+
+
 #id-icon-logout {
   display: flex;
   align-items: center;
