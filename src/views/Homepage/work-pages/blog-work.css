@@ -1,0 +1,14 @@
+#container-caroussel-work-blog {
+  border-radius: 30px;
+  margin-top: 2em;
+}
+#img1-caroussel {
+  border-radius: 30px;
+}
+#img2-caroussel {
+  display: none;
+}
+#container-caroussel-work-blog:hover{
+    #img2-caroussel{
+        display: flex;
+    }}

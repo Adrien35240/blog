@@ -1,5 +1,5 @@
 import React from "react";
-import Signup from "./views/Signup/Signup";
+// import Signup from "./views/Signup/Signup";
 //NOTE:remove container
 import { AuthProvider } from "./services/security/contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,6 +15,7 @@ import FocusPost from "./views/FocusPost/FocusPost";
 import UpdatePost from "./views/UpdatePost/UpdatePost";
 import HomePage from "./views/Homepage/HomePage";
 import InProgress from "./views/InProgress/InProgress";
+import BlogWork from "./views/Homepage/work-pages/BlogWork";
 import "./app.css";
 function App() {
   return (
@@ -28,13 +29,14 @@ function App() {
               <PrivateRoute path="/update-post" component={UpdatePost} />
               <PrivateRoute path="/update-profil" component={UpdateProfil} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <Route path="/in-progress" component={InProgress}/>
+              <Route path="/work-blog" component={BlogWork} />
+              <Route path="/in-progress" component={InProgress} />
               <Route path="/home-page" component={HomePage} />
               <Route path="/focus-post/:slug" component={FocusPost} />
               <Route path="/signup" component={InProgress} />
-              <Route path="/login" component={Login} />{/* NOTE: a remplace par Login */}
+              <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
-               <Route path="/blog" component={PostContainer} />{/* NOTE: a remplace par PostContainer */}
+              <Route path="/blog" component={PostContainer} />
               <Route path="/" component={HomePage} />
             </Switch>
           </div>

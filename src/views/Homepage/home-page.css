@@ -231,7 +231,28 @@
   height: 2em;
   color: var(--icon-color);
 }
+#work {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  height: 80vh;
+  box-shadow: 0px 4px 4px 2px var(--box-shadow-color);
+  border-radius: 30px;
+}
+#container-works{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3em;
+  height: 20vh;
+  width: 30vw;
+  text-decoration: none;
+}
+#container-blog-work{
 
+}
 @media screen and (max-width: 800px) {
   .container-home-page {
     font-size: 4vw;

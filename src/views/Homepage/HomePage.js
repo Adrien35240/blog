@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import SendMail from "../../services/features/SendMail";
-import memoji from "./memoji.svg";
+import memoji from "./assets/memoji.svg";
 import { ImLinkedin, ImGithub } from "react-icons/im";
 import { CgCodeSlash, CgScreen } from "react-icons/cg";
-import {FaAddressCard} from "react-icons/fa"
+import { FaAddressCard } from "react-icons/fa";
 import { GoGear } from "react-icons/go";
 import "./home-page.css";
+import BlogWork from "./work-pages/BlogWork";
 function HomePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -117,7 +118,12 @@ function HomePage() {
         </div>
       </section>
       <section className="container-work" id="container-work">
-        Réalisations
+        <div id="work">
+          <div id="title-work">Réalisations</div>
+          <div id="container-works">
+            <a id="container-blog-work" href="/blog"><BlogWork/></a>
+          </div>
+        </div>
       </section>
       <section className="container-contact" id="container-contact">
         <form
