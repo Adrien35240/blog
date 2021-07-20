@@ -30,8 +30,17 @@ function HomePage() {
           <div>
             Développeur passionné dans le domaine du web. J'ai réalisé ce site
             vitrine en React pour exposer mes compétences apprises en
-            auto-didacte. Vous y trouverez mon portfolio ainsi qu'un blog
-            réalisé avec ReactJs et Firebase.
+            auto-didacte. Vous y trouverez  <a
+              href="https://www.linkedin.com/in/adrien-ribault-30792019b/"
+              target="_blank"
+              rel="noopener noreferrer"
+          >mon profil linkedIn</a>, <a
+              href="https://github.com/adrien35240"
+              target="_blank"
+              rel="noopener noreferrer">mon github</a>, <a
+              href="https://compartiment-cv.s3.eu-west-3.amazonaws.com/cv.pdf"
+              download="cv.pdf"
+          >mon cv,</a> ainsi qu'un blog réalisé avec ReactJs/Firebase.
           </div>
         </div>
         <div className="container-icon-presentation">
